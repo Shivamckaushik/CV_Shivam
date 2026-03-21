@@ -1,0 +1,238 @@
+\documentclass[11pt,a4paper]{article}
+
+% Packages
+\usepackage[margin=0.6in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{xcolor}
+% fontawesome5 removed — using text symbols instead
+\usepackage{parskip}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Colors
+\definecolor{accent}{HTML}{D4A017}
+\definecolor{darktext}{HTML}{222222}
+\definecolor{graytext}{HTML}{555555}
+
+% Hyperlink setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darktext,
+    urlcolor=accent,
+    pdfborderstyle={/S/U/W 1}
+}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\color{darktext}}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+\titleformat{\subsection}[runin]{\bfseries\color{darktext}}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{8pt}{4pt}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Custom commands
+\newcommand{\projectstack}[1]{\textcolor{graytext}{\textbf{Stack:} #1}}
+\newcommand{\jobtitle}[4]{%
+    \noindent\textbf{#1}\\
+    \textbf{#2} \hfill #3\\
+    \textit{#4}\par\vspace{2pt}
+}
+
+\begin{document}
+
+% ============================================================
+% HEADER
+% ============================================================
+\begin{center}
+    {\LARGE\bfseries SHIVAM CHAND KAUSHIK}\\[4pt]
+    {\large\color{accent}\textbf{AI/ML Engineer \textbar{} Semiconductor Domain Expert}}\\[6pt]
+    Bangalore, India \enspace$\cdot$\enspace
+    +91-8310644891 \enspace$\cdot$\enspace
+    \href{mailto:shivamckaushik@gmail.com}{shivamckaushik@gmail.com} \enspace$\cdot$\enspace
+    \href{https://www.linkedin.com/in/shivam-chand-kaushik-34a723a8}{LinkedIn}
+\end{center}
+
+% ============================================================
+% PROFESSIONAL SUMMARY
+% ============================================================
+\section{Professional Summary}
+
+AI/ML engineer with 9 years of semiconductor and systems software experience spanning advanced packaging, IC inspection, and factory automation at \textbf{Kulicke \& Soffa} and \textbf{KLA}. Currently pursuing \textbf{M.Tech in Artificial Intelligence from IIT Jodhpur}. Building production-grade AI systems---multi-agent architectures, vision-language models, and knowledge graph platforms---specifically for semiconductor manufacturing, inspection, and EDA workflows. One of a rare cohort who combines deep fab-floor domain knowledge (SECS/GEM, wire bonding, pick-and-place, machine vision) with modern AI/ML engineering (LangGraph, PyTorch, LLaVA, RAG, multi-agent orchestration). Proven ability to ship production C++ software across three countries, lead engineering teams, and deliver systems deployed to military and semiconductor customers.
+
+% ============================================================
+% CORE COMPETENCIES
+% ============================================================
+\section{Core Competencies}
+
+\begin{tabularx}{\textwidth}{|X|X|X|}
+\hline
+\textbf{AI/ML \& Deep Learning} & \textbf{Semiconductor Domain} & \textbf{Software \& Infrastructure} \\
+\hline
+PyTorch, TensorFlow, torchvision & Wafer Defect Inspection (KLA) & C++ (9 years production) \\
+LangGraph, LangChain, RAG & Adv. Packaging \& Wire Bonding (K\&S) & Python, C\#/.NET, WPF \\
+LLaVA, Qwen-VL, DeepSeek-Coder & SECS/GEM Protocol (Intel integration) & FastAPI, Docker, Kubernetes \\
+XGBoost, scikit-learn, SHAP & Pick \& Place (iFlex, Luminex, Pixalux) & MQTT, TCP/IP, WebSocket \\
+Computer Vision, CNNs, ViT & SPC, Yield Analysis, Pred. Maintenance & Neo4j, PostgreSQL, ChromaDB \\
+Multi-Agent Orchestration & Smart Factory / Industry 4.0 & React, Streamlit, Git/CI-CD \\
+\hline
+\end{tabularx}
+
+% ============================================================
+% WORK EXPERIENCE
+% ============================================================
+\section{Work Experience}
+
+\jobtitle{Software Engineer --- Semiconductor Assembly \& Smart Factory AI}{Kulicke \& Soffa (K\&S), Netherlands \& Singapore}{Sept 2020 --- Present}{via ASM Technologies | K\&S is a global leader in semiconductor assembly equipment for advanced packaging.}
+\begin{itemize}[leftmargin=*, nosep, topsep=2pt]
+    \item Developing and optimizing the C++ software stack for RapidPro and ATPP wire bonding machines, engineering real-time machine control systems that process high-frequency sensor data and manage process parameter optimization.
+    \item Architected product decoupling in the Machine Configuration Tool (MCT), enabling multi-platform support across 6 machine variants (iFlex-T2/T4/H1/CX, Luminex, Pixalux).
+    \item Integrated \textbf{MQTT protocol} into MCT for the Smart Factory initiative, enabling real-time machine-to-cloud data streaming for production analytics.
+    \item Led code quality modernization: compiler warning upgrades (W3 to W4), static analysis (PVS-Studio), IWYU implementation, and Boost-to-STL migration.
+\end{itemize}
+
+\jobtitle{Software Engineer --- IC Inspection \& Machine Vision}{Quest Global Technologies (client: KLA/ICOS)}{July 2018 --- Sept 2020}{Bangalore | KLA is the world's leading semiconductor process control and inspection equipment company.}
+\begin{itemize}[leftmargin=*, nosep, topsep=2pt]
+    \item Built a Python-based hardware simulator for the ICOS T800 Gantry System---a TCP/IP server modeling machine behavior for offline testing and digital-twin development.
+    \item Developed data logging and analytics pipelines for production metrics: throughput tracking, taper parameter monitoring, and per-head performance analysis.
+    \item Implemented \textbf{SECS/GEM interface for Intel}---the semiconductor industry standard protocol for equipment-to-host communication in automated fabs.
+    \item Engineered granular process control: independent per-head yield-loss diagnostics for YZ1/YZ2/YZ4 pick \& place heads.
+\end{itemize}
+
+\jobtitle{Software Engineer --- Telecom \& Embedded Systems}{Quest Global Technologies (client: Reliance Jio)}{2018}{Bangalore}
+\begin{itemize}[leftmargin=*, nosep, topsep=2pt]
+    \item Developed LibWebSocket server for IoT smart speaker integration with ONT router---embedded systems communication architecture for Jio's IoT ecosystem.
+\end{itemize}
+
+\jobtitle{Software Engineer --- Aerospace \& Defense Systems}{AxisCades Aerospace \& Technology}{May 2016 --- June 2018}{Bangalore}
+\begin{itemize}[leftmargin=*, nosep, topsep=2pt]
+    \item Developed real-time 2D signal visualization for a Bird Detection Radar system using C++/Qt.
+    \item \textbf{Led a team of 5 engineers} and commissioned ACRT across \textbf{37 units of the Indian Army and Indian Air Force}.
+\end{itemize}
+
+% ============================================================
+% AI/ML PROJECTS
+% ============================================================
+\section{AI/ML Projects}
+
+\vspace{2pt}
+{\small\color{accent}\textbf{LLM \& Agentic AI Systems}}
+\vspace{4pt}
+
+\subsection{1. Multi-Modal Vision-Language AI for Semiconductor Inspection \& Autonomous FA Report Generation}
+\begin{itemize}[leftmargin=*, nosep, topsep=3pt]
+    \item Built a multi-modal Vision-Language system for semiconductor defect inspection by fine-tuning LLaVA-1.6 with QLoRA on semiconductor image-text pairs, enabling natural language defect description, root cause hypothesis generation, and severity reasoning directly from inspection images (SEM, optical, wafer map).
+    \item Developed four agentic modules (Defect Describer, Root Cause Analyzer, Severity Classifier, Recipe Advisor) that correlate defect images with SECS/GEM equipment logs and a historical defect vector database (Qdrant) to generate structured Failure Analysis reports in under 2 minutes---replacing a 2--4 hour manual process.
+    \item \projectstack{LLaVA-1.6, DINOv2, QLoRA/PEFT, LangGraph, SECS/GEM, MQTT, Qdrant, MinIO, TimescaleDB, FastAPI, Docker}
+\end{itemize}
+
+\subsection{2. Agentic AI for HDL Code Analysis, Generation \& Verification}
+\begin{itemize}[leftmargin=*, nosep, topsep=3pt]
+    \item Architected a multi-agent system for semiconductor HDL verification: four specialized agents (RTL Analyzer, Testbench Generator, Lint/DRC, Design Space Explorer) autonomously parse Verilog/SystemVerilog, generate UVM testbenches with self-correction loops, and optimize design parameters via reinforcement learning---targeting 60--70\% of the chip development cycle spent on verification.
+    \item Integrated open-source EDA tools (Icarus Verilog, Yosys, Verilator) as agent tools with RAG over IEEE Verilog standards and design pattern libraries. Supports fully air-gapped deployment with local LLMs for semiconductor IP protection.
+    \item \projectstack{LangGraph, DeepSeek-Coder, pyverilog, Icarus Verilog, Yosys, Qdrant, Stable-Baselines3, Optuna, FastAPI, React, Docker}
+\end{itemize}
+
+\subsection{3. Multi-Agent Autonomous Fab Operations System}
+\begin{itemize}[leftmargin=*, nosep, topsep=3pt]
+    \item Developed a multi-agent AI system for autonomous semiconductor fab diagnostics. Four specialized agents (Equipment Health, Yield Analyst, Recipe Optimization, Defect Inspector) collaborate through a LangGraph orchestrator to investigate yield excursions end-to-end---from SECS/GEM log anomaly detection to wafer map classification to root cause reporting.
+    \item Implemented real-time MQTT ingestion for live equipment data, RAG over equipment manuals, human-in-the-loop approval gates, and full audit trail for regulated fab compliance. Multi-modal reasoning across SECS/GEM logs, SPC data, and wafer map images.
+    \item \projectstack{LangGraph, PyTorch, MQTT, SECS/GEM, ChromaDB, PostgreSQL, Redis, FastAPI, React, Docker Compose, Prometheus/Grafana}
+\end{itemize}
+
+\subsection{4. LLM-Powered SECS/GEM Protocol Assistant (RAG)}
+\begin{itemize}[leftmargin=*, nosep, topsep=3pt]
+    \item Built a RAG-powered LLM assistant for the SECS/GEM semiconductor protocol, enabling natural language queries over SEMI standards, equipment specifications, and alarm codes. Fine-tuned retrieval on SECS/GEM documentation with FAISS vector store.
+    \item \projectstack{HuggingFace Transformers, LangChain, FAISS, Streamlit}
+\end{itemize}
+
+\vspace{4pt}
+{\small\color{accent}\textbf{Deep Learning \& Computer Vision}}
+\vspace{4pt}
+
+\subsection{5. Wafer Defect Detection \& Classification (WM-811K)}
+\begin{itemize}[leftmargin=*, nosep, topsep=3pt]
+    \item Built a deep learning pipeline for wafer defect pattern classification on the WM-811K dataset (811K+ wafer maps, 9 defect classes) using ResNet and EfficientNet architectures, with AutoEncoder-based anomaly detection for unseen defect patterns. Achieved 95\%+ classification accuracy.
+    \item \projectstack{PyTorch, torchvision, scikit-learn, FastAPI, Docker}
+\end{itemize}
+
+\vspace{4pt}
+{\small\color{accent}\textbf{Data Science \& Manufacturing Analytics}}
+\vspace{4pt}
+
+\subsection{6. Semiconductor Yield Prediction \& Explainability (SECOM)}
+\begin{itemize}[leftmargin=*, nosep, topsep=3pt]
+    \item Developed a yield prediction model on the SECOM semiconductor manufacturing dataset (591 sensor features, 93.4\% class imbalance). Identified top 15 critical sensor parameters using SHAP analysis, enabling targeted process monitoring for yield improvement.
+    \item \projectstack{scikit-learn, XGBoost, LightGBM, SHAP, pandas, Streamlit}
+\end{itemize}
+
+\subsection{7. SECS/GEM Data Analytics \& Predictive Maintenance}
+\begin{itemize}[leftmargin=*, nosep, topsep=3pt]
+    \item Built a SECS/GEM data analytics pipeline for semiconductor equipment predictive maintenance. Applied time-series anomaly detection (Isolation Forest, LSTM) with real-time MQTT integration to predict equipment failures before yield impact.
+    \item \projectstack{PyTorch (LSTM), scikit-learn, paho-mqtt, pandas, FastAPI}
+\end{itemize}
+
+\vspace{4pt}
+{\small\color{accent}\textbf{Process Optimization}}
+\vspace{4pt}
+
+\subsection{8. Wire Bond Quality Prediction \& Process Optimization}
+\begin{itemize}[leftmargin=*, nosep, topsep=3pt]
+    \item Developed ML-based wire bond quality prediction with Bayesian optimization to identify optimal bonding parameters, reducing predicted defect rate by 40\%.
+    \item \projectstack{scikit-learn, Optuna, matplotlib}
+\end{itemize}
+
+% ============================================================
+% EDUCATION
+% ============================================================
+\section{Education}
+
+\noindent\textbf{Indian Institute of Technology (IIT), Jodhpur} \hfill June 2024 --- Present\\
+\textit{Master of Technology (M.Tech) --- Artificial Intelligence}
+
+\noindent\textbf{JSS Academy of Technical Education, Noida} \hfill June 2011 --- May 2015\\
+\textit{Bachelor of Technology (B.Tech) --- Information Technology}
+
+% ============================================================
+% ACHIEVEMENTS
+% ============================================================
+\section{Achievements}
+\begin{itemize}[leftmargin=*, nosep, topsep=2pt]
+    \item \textbf{Bright Mind Award} --- ASM Technologies Ltd.\ (2021), recognizing exceptional technical contribution in semiconductor software engineering
+    \item \textbf{779th Rank} --- International Mathematics Olympiad (IMO), demonstrating strong analytical and quantitative aptitude
+\end{itemize}
+
+% ============================================================
+% CERTIFICATIONS
+% ============================================================
+\section{Certifications (In Progress)}
+
+\begin{tabularx}{\textwidth}{|X|l|}
+\hline
+\textbf{Certification} & \textbf{Provider} \\
+\hline
+Fundamentals of Deep Learning & NVIDIA Deep Learning Institute (DLI) \\
+AWS Certified Machine Learning Engineer --- Associate & Amazon Web Services \\
+Azure AI Engineer Associate (AI-102) & Microsoft \\
+\hline
+\end{tabularx}
+
+% ============================================================
+% LANGUAGES
+% ============================================================
+\section{Languages}
+\begin{itemize}[leftmargin=*, nosep, topsep=2pt]
+    \item English --- Professional proficiency
+    \item Hindi --- Native
+\end{itemize}
+
+\vfill
+\begin{center}
+    \textcolor{graytext}{\textit{Project repositories available on GitHub upon request.}}
+\end{center}
+
+\end{document}
