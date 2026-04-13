@@ -587,6 +587,48 @@ section {
   line-height: 1.6;
 }
 
+.project-links {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.project-link {
+  font-size: 0.82rem;
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid var(--accent);
+  padding: 2px 8px;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.project-link:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.project-company-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--accent);
+  padding: 2px 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.project-publication {
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-style: italic;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
 .project-stack {
   display: flex;
   flex-wrap: wrap;

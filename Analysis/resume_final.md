@@ -14,7 +14,7 @@ AI/ML engineer with 9 years of semiconductor and systems software experience spa
 
 ## Education
 
-**Indian Institute of Technology (IIT), Jodhpur** | June 2024 — Present
+**Indian Institute of Technology (IIT), Jodhpur** | June 2024 — May 2026
 *Master of Technology (M.Tech) — Artificial Intelligence*
 
 **JSS Academy of Technical Education, Noida** | June 2011 — May 2015
@@ -27,70 +27,48 @@ AI/ML engineer with 9 years of semiconductor and systems software experience spa
 | AI/ML & Deep Learning | Semiconductor Domain | Software & Infrastructure |
 |------------------------|----------------------|---------------------------|
 | PyTorch, TensorFlow, torchvision | Wafer Defect Inspection (KLA) | C++ (9 years production) |
-| LangGraph, LangChain, RAG | Advanced Packaging & Wire Bonding (K&S) | Python, C#/.NET, WPF |
-| LLaVA, Qwen-VL, DeepSeek-Coder | SECS/GEM Protocol (Intel integration) | FastAPI, Docker, Kubernetes |
-| XGBoost, scikit-learn, SHAP | Pick & Place (iFlex, Luminex, Pixalux) | MQTT, TCP/IP, WebSocket |
-| Computer Vision, CNNs, ViT | SPC, Yield Analysis, Predictive Maintenance | Neo4j, PostgreSQL, ChromaDB |
-| Multi-Agent Orchestration | Smart Factory / Industry 4.0 | React, Streamlit, Git/CI-CD |
+| LangGraph, LangChain, RAG | Advanced Packaging & Wire Bonding (K&S) | Python |
+| LLaVA, Qwen-VL, DeepSeek-Coder | SECS/GEM Protocol (Intel integration) | FastAPI |
+| XGBoost, scikit-learn, SHAP | Pick & Place (iFlex, Luminex, Pixalux) | React, Streamlit |
+| Computer Vision, CNNs, ViT | SPC, Yield Analysis, Predictive Maintenance | Git/CI-CD |
+| Multi-Agent Orchestration | Smart Factory / Industry 4.0 | |
 
 ---
 
 ## AI/ML Projects
 
-### LLM & Agentic AI Systems
-
 #### 1. Multi-Modal Vision-Language AI for Semiconductor Inspection & Autonomous FA Report Generation
+[GitHub](https://github.com/Shivamckaushik/SemiFA) | [HuggingFace Dataset](https://huggingface.co/datasets/ShivamChand/SemiFA-930)
 
-- Built a multi-modal Vision-Language system for semiconductor defect inspection by fine-tuning LLaVA-1.6 with QLoRA on semiconductor image-text pairs, enabling natural language defect description, root cause hypothesis generation, and severity reasoning directly from inspection images (SEM, optical, wafer map).
-- Developed four agentic modules (Defect Describer, Root Cause Analyzer, Severity Classifier, Recipe Advisor) that correlate defect images with SECS/GEM equipment logs and a historical defect vector database (Qdrant) to generate structured Failure Analysis reports in under 2 minutes — replacing a 2-4 hour manual process.
-- **Stack:** LLaVA-1.6, DINOv2, QLoRA/PEFT, LangGraph, SECS/GEM, MQTT, Qdrant, MinIO, TimescaleDB, FastAPI, Docker
+- Built a four-agent LangGraph pipeline (Defect Describer, Root Cause Analyzer, Severity Classifier, Recipe Advisor) that fuses DINOv2 visual embeddings, SECS/GEM-format equipment telemetry, and a Qdrant historical defect retrieval database into a unified LLaVA-1.6 context — generating structured Failure Analysis reports in 48 seconds, replacing a 2–4 hour manual process.
+- Trained a DINOv2 + MLP defect classifier on SemiFA-930, a self-constructed 930-image dataset spanning 9 semiconductor defect classes (SEM, optical, wafer map); achieved 92.1% accuracy / 0.917 Macro F1 with only 214K trainable parameters vs. 23.5M for ResNet-50 (82.9%).
+- Publicly released SemiFA-930 dataset on HuggingFace; paper prepared for arXiv submission (cs.CV).
+- **Stack:** LLaVA-1.6, DINOv2, QLoRA/PEFT, LangGraph, SECS/GEM, Qdrant, FastAPI, ReportLab, Streamlit
 
-#### 2. Agentic AI for HDL Code Analysis, Generation & Verification
+#### 2. Wafer Defect Detection & Classification (WM-811K)
+[GitHub](https://github.com/Shivamckaushik/Visual-inspection-for-Wafer-Defect-Detection-Classification-WM-811K-.git)
+
+- Built an end-to-end deep learning pipeline for wafer defect pattern classification on the WM-811K dataset (811K+ wafer maps, 9 defect classes) using ResNet18 and EfficientNet-B0 architectures, with a ConvAutoEncoder for anomaly detection on unseen defect patterns. Achieved 96.2% overall test accuracy and 90.5% defect-class accuracy on a severely class-imbalanced dataset (103,201 normal vs 104 Near-Full samples); resolved class collapse via WeightedRandomSampler and diagnosed 6 critical training bugs across normalization, BatchNorm domain shift, and loss double-suppression.
+- Deployed as a FastAPI inference server with `/classify` and `/anomaly-detect` endpoints; live end-to-end API testing confirmed 91–94% confidence across 7 of 8 defect classes on real WM-811K wafer maps. Anomaly threshold calibrated at the 95th percentile of normal-wafer reconstruction error.
+- **Stack:** PyTorch, torchvision, scikit-learn, FastAPI
+
+#### 3. LLM-Powered SECS/GEM Protocol Assistant (RAG) *(Applied at Kulicke & Soffa)*
+
+- Built a RAG-powered LLM assistant for the SECS/GEM semiconductor protocol, enabling natural language queries over SEMI standards, equipment specifications, alarm codes, and message formats. Fine-tuned retrieval on SECS/GEM documentation with FAISS vector store.
+- Deployed as an interactive web application for equipment and process engineers in semiconductor fabs.
+- **Stack:** HuggingFace Transformers, LangChain, FAISS, Streamlit
+
+#### 4. Wire Bond Quality Prediction & Process Optimization *(Applied at Kulicke & Soffa)*
+
+- Developed an ML-based wire bond quality prediction model using process data (bond force, ultrasonic power, temperature, loop height) modeled on K&S RapidPro and ATPP machine parameters. Classified bond pass/fail with root cause analysis and applied Bayesian optimization to identify optimal bonding parameters, reducing predicted defect rate by 40%.
+- **Stack:** scikit-learn, Optuna, matplotlib
+
+#### 5. Agentic AI for HDL Code Analysis, Generation & Verification *(Applied at Kulicke & Soffa)*
 
 - Architected a multi-agent system for semiconductor HDL verification: four specialized agents (RTL Analyzer, Testbench Generator, Lint/DRC, Design Space Explorer) autonomously parse Verilog/SystemVerilog, generate UVM testbenches with self-correction loops, and optimize design parameters via reinforcement learning — targeting 60-70% of the chip development cycle spent on verification.
 - Integrated open-source EDA tools (Icarus Verilog, Yosys, Verilator) as agent tools with RAG over IEEE Verilog standards and design pattern libraries. Supports fully air-gapped deployment with local LLMs (DeepSeek-Coder) for semiconductor IP protection.
 - **Stack:** LangGraph, DeepSeek-Coder, pyverilog, Icarus Verilog, Yosys, Qdrant, Stable-Baselines3, Optuna, FastAPI, React, Docker
 
-#### 3. Multi-Agent Autonomous Fab Operations System
-
-- Developed a multi-agent AI system for autonomous semiconductor fab diagnostics. Four specialized agents (Equipment Health, Yield Analyst, Recipe Optimization, Defect Inspector) collaborate through a LangGraph orchestrator to investigate yield excursions end-to-end — from SECS/GEM log anomaly detection to wafer map classification to root cause reporting.
-- Implemented real-time MQTT ingestion for live equipment data, RAG over equipment manuals, human-in-the-loop approval gates, and full audit trail for regulated fab compliance. Multi-modal reasoning across SECS/GEM logs, SPC data, and wafer map images.
-- **Stack:** LangGraph, PyTorch, MQTT, SECS/GEM, ChromaDB, PostgreSQL, Redis, FastAPI, React, Docker Compose, Prometheus/Grafana
-
-#### 4. LLM-Powered SECS/GEM Protocol Assistant (RAG)
-
-- Built a RAG-powered LLM assistant for the SECS/GEM semiconductor protocol, enabling natural language queries over SEMI standards, equipment specifications, alarm codes, and message formats. Fine-tuned retrieval on SECS/GEM documentation with FAISS vector store.
-- Deployed as an interactive web application for equipment and process engineers.
-- **Stack:** HuggingFace Transformers, LangChain, FAISS, Streamlit
-
-### Deep Learning & Computer Vision
-
-#### 5. Wafer Defect Detection & Classification (WM-811K)
-
-- Built a deep learning pipeline for wafer defect pattern classification on the WM-811K dataset (811K+ wafer maps, 9 defect classes) using ResNet and EfficientNet architectures, with AutoEncoder-based anomaly detection for unseen defect patterns. Benchmarked against classical ML baselines (Random Forest, XGBoost).
-- Deployed as a containerized inference API with FastAPI, achieving 95%+ classification accuracy across all defect classes.
-- **Stack:** PyTorch, torchvision, scikit-learn, FastAPI, Docker
-
-### Data Science & Manufacturing Analytics
-
-#### 6. Semiconductor Yield Prediction & Explainability (SECOM)
-
-- Developed a yield prediction model on the SECOM semiconductor manufacturing dataset (591 sensor features, extreme class imbalance at 93.4% pass rate). Applied SMOTE, mutual information, LASSO, and tree-based feature selection to identify the top 15 critical sensor parameters driving yield loss.
-- Built an interpretable SHAP dashboard enabling process engineers to understand which parameters to monitor for yield improvement. Models: XGBoost, LightGBM, neural network ensemble.
-- **Stack:** scikit-learn, XGBoost, LightGBM, SHAP, pandas, Streamlit
-
-#### 7. SECS/GEM Data Analytics & Predictive Maintenance
-
-- Built a SECS/GEM data analytics pipeline for semiconductor equipment predictive maintenance. Developed a Python library that parses SECS/GEM messages, extracts equipment state data, and applies time-series anomaly detection (Isolation Forest, LSTM) to predict equipment failures before yield impact.
-- Integrated MQTT for real-time equipment data streaming, directly leveraging SECS/GEM protocol expertise from KLA/Intel production work.
-- **Stack:** PyTorch (LSTM), scikit-learn, paho-mqtt, pandas, FastAPI
-
-### Process Optimization
-
-#### 8. Wire Bond Quality Prediction & Process Optimization
-
-- Developed an ML-based wire bond quality prediction model using simulated bonding process data (bond force, ultrasonic power, temperature, loop height). Classified bond pass/fail with root cause analysis and applied Bayesian optimization to identify optimal bonding parameters, reducing predicted defect rate by 40%.
-- **Stack:** scikit-learn, Optuna, matplotlib
 
 ---
 
@@ -108,6 +86,7 @@ AI/ML engineer with 9 years of semiconductor and systems software experience spa
 - Architected product decoupling in the Machine Configuration Tool (MCT), enabling multi-platform support across iFlex-T2/T4/H1/CX, Luminex, and Pixalux — reducing configuration overhead for 6 machine variants.
 - Integrated MQTT protocol into MCT for the Smart Factory initiative, enabling real-time machine-to-cloud data streaming for production analytics — the same MQTT architecture now used in AI/ML projects for real-time equipment data ingestion.
 - Led code quality modernization: compiler warning upgrades (W3 to W4), static analysis (PVS-Studio), IWYU implementation, and Boost-to-STL migration.
+- Applied AI to K&S semiconductor work: built an **LLM-powered SECS/GEM Protocol Assistant (RAG)** leveraging deep K&S equipment protocol knowledge, and an **ML-based Wire Bond Quality Prediction** system with Bayesian process optimization modeled on RapidPro/ATPP machine parameters — reducing predicted defect rate by 40%.
 
 ### Software Engineer — IC Inspection & Machine Vision
 **Quest Global Technologies** (client: **KLA/ICOS**) | Bangalore | July 2018 — Sept 2020
@@ -145,14 +124,6 @@ AI/ML engineer with 9 years of semiconductor and systems software experience spa
 |--------------|----------|
 | Fundamentals of Deep Learning | NVIDIA Deep Learning Institute (DLI) |
 | AWS Certified Machine Learning Engineer — Associate | Amazon Web Services |
-| Azure AI Engineer Associate (AI-102) | Microsoft |
-
----
-
-## Languages
-
-- English — Professional proficiency
-- Hindi — Native
 
 ---
 

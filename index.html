@@ -21,8 +21,8 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#achievements">Achievements</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -68,7 +68,7 @@
           <span class="stat-label">Years Semiconductor</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number">8</span>
+          <span class="stat-number">5</span>
           <span class="stat-label">AI/ML Projects</span>
         </div>
         <div class="stat-item">
@@ -127,22 +127,144 @@
           <div class="skill-tags">
             <span class="skill-tag">C++ (9 yrs)</span>
             <span class="skill-tag">Python</span>
-            <span class="skill-tag">C#/.NET</span>
-            <span class="skill-tag">WPF</span>
             <span class="skill-tag">FastAPI</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">Kubernetes</span>
-            <span class="skill-tag">MQTT</span>
-            <span class="skill-tag">TCP/IP</span>
-            <span class="skill-tag">WebSocket</span>
-            <span class="skill-tag">Neo4j</span>
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">ChromaDB</span>
             <span class="skill-tag">React</span>
             <span class="skill-tag">Streamlit</span>
             <span class="skill-tag">Git/CI-CD</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS ==================== -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title fade-in">AI/ML Projects</h2>
+
+      <div class="project-filters fade-in">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="llm-agentic">LLM &amp; Agentic AI</button>
+        <button class="filter-btn" data-filter="dl-cv">Deep Learning &amp; CV</button>
+        <button class="filter-btn" data-filter="optimization">Process Optimization</button>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: VLM Inspection -->
+        <div class="project-card fade-in" data-category="llm-agentic">
+          <span class="project-category-label">LLM &amp; Agentic AI</span>
+          <h3>Multi-Modal Vision-Language AI for Semiconductor Inspection &amp; Autonomous FA Report Generation</h3>
+          <div class="project-links">
+            <a href="https://github.com/Shivamckaushik/SemiFA" target="_blank" class="project-link">&#128279; GitHub</a>
+            <a href="https://huggingface.co/datasets/ShivamChand/SemiFA-930" target="_blank" class="project-link">&#129303; HuggingFace Dataset</a>
+          </div>
+          <p class="project-summary">Four-agent LangGraph pipeline generating structured Failure Analysis reports in 48 seconds, replacing a 2–4 hour manual process. Self-constructed SemiFA-930 dataset released publicly on HuggingFace.</p>
+          <div class="project-details">
+            <ul>
+              <li>Built a four-agent LangGraph pipeline (Defect Describer, Root Cause Analyzer, Severity Classifier, Recipe Advisor) that fuses DINOv2 visual embeddings, SECS/GEM-format equipment telemetry, and a Qdrant historical defect retrieval database into a unified LLaVA-1.6 context — generating structured Failure Analysis reports in 48 seconds, replacing a 2–4 hour manual process.</li>
+              <li>Trained a DINOv2 + MLP defect classifier on SemiFA-930, a self-constructed 930-image dataset spanning 9 semiconductor defect classes (SEM, optical, wafer map); achieved 92.1% accuracy / 0.917 Macro F1 with only 214K trainable parameters vs. 23.5M for ResNet-50 (82.9%).</li>
+              <li>Publicly released SemiFA-930 dataset on HuggingFace; paper prepared for arXiv submission (cs.CV).</li>
+            </ul>
+          </div>
+          <p class="project-publication">&#128196; Paper prepared for arXiv submission (cs.CV) — publication in progress.</p>
+          <div class="project-stack">
+            <span class="stack-tag">LLaVA-1.6</span>
+            <span class="stack-tag">DINOv2</span>
+            <span class="stack-tag">QLoRA/PEFT</span>
+            <span class="stack-tag">LangGraph</span>
+            <span class="stack-tag">SECS/GEM</span>
+            <span class="stack-tag">Qdrant</span>
+            <span class="stack-tag">FastAPI</span>
+            <span class="stack-tag">ReportLab</span>
+            <span class="stack-tag">Streamlit</span>
+          </div>
+          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
+        </div>
+
+        <!-- Project 2: Wafer Defect -->
+        <div class="project-card fade-in" data-category="dl-cv">
+          <span class="project-category-label">Deep Learning &amp; Computer Vision</span>
+          <h3>Wafer Defect Detection &amp; Classification (WM-811K)</h3>
+          <div class="project-links">
+            <a href="https://github.com/Shivamckaushik/Visual-inspection-for-Wafer-Defect-Detection-Classification-WM-811K-.git" target="_blank" class="project-link">&#128279; GitHub</a>
+          </div>
+          <p class="project-summary">End-to-end deep learning pipeline for wafer defect pattern classification on 811K+ wafer maps across 9 defect classes, achieving 96.2% overall test accuracy with ConvAutoEncoder anomaly detection.</p>
+          <div class="project-details">
+            <ul>
+              <li>Built an end-to-end deep learning pipeline for wafer defect pattern classification on the WM-811K dataset (811K+ wafer maps, 9 defect classes) using ResNet18 and EfficientNet-B0 architectures, with a ConvAutoEncoder for anomaly detection on unseen defect patterns. Achieved 96.2% overall test accuracy and 90.5% defect-class accuracy on a severely class-imbalanced dataset (103,201 normal vs 104 Near-Full samples); resolved class collapse via WeightedRandomSampler and diagnosed 6 critical training bugs across normalization, BatchNorm domain shift, and loss double-suppression.</li>
+              <li>Deployed as a FastAPI inference server with <code>/classify</code> and <code>/anomaly-detect</code> endpoints; live end-to-end API testing confirmed 91&ndash;94% confidence across 7 of 8 defect classes on real WM-811K wafer maps. Anomaly threshold calibrated at the 95th percentile of normal-wafer reconstruction error.</li>
+            </ul>
+          </div>
+          <div class="project-stack">
+            <span class="stack-tag">PyTorch</span>
+            <span class="stack-tag">torchvision</span>
+            <span class="stack-tag">scikit-learn</span>
+            <span class="stack-tag">FastAPI</span>
+          </div>
+          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
+        </div>
+
+        <!-- Project 3: SECS/GEM RAG -->
+        <div class="project-card fade-in" data-category="llm-agentic">
+          <span class="project-category-label">LLM &amp; Agentic AI</span>
+          <span class="project-company-badge">&#127981; Applied at Kulicke &amp; Soffa</span>
+          <h3>LLM-Powered SECS/GEM Protocol Assistant (RAG)</h3>
+          <p class="project-summary">RAG-powered LLM assistant enabling natural language queries over SEMI standards, equipment specifications, alarm codes, and message formats.</p>
+          <div class="project-details">
+            <p>Fine-tuned retrieval on SECS/GEM documentation with FAISS vector store. Deployed as an interactive web application for equipment and process engineers in semiconductor fabs.</p>
+          </div>
+          <div class="project-stack">
+            <span class="stack-tag">HuggingFace</span>
+            <span class="stack-tag">LangChain</span>
+            <span class="stack-tag">FAISS</span>
+            <span class="stack-tag">Streamlit</span>
+          </div>
+          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
+        </div>
+
+        <!-- Project 4: Wire Bond -->
+        <div class="project-card fade-in" data-category="optimization">
+          <span class="project-category-label">Process Optimization</span>
+          <span class="project-company-badge">&#127981; Applied at Kulicke &amp; Soffa</span>
+          <h3>Wire Bond Quality Prediction &amp; Process Optimization</h3>
+          <p class="project-summary">ML-based wire bond quality prediction with Bayesian optimization, reducing predicted defect rate by 40% — directly derived from domain knowledge of K&amp;S RapidPro and ATPP wire bonding machines.</p>
+          <div class="project-details">
+            <p>Used simulated bonding process data (bond force, ultrasonic power, temperature, loop height) modeled on K&amp;S machine parameters. Classified bond pass/fail with root cause analysis and applied Bayesian optimization to identify optimal bonding parameters.</p>
+          </div>
+          <div class="project-stack">
+            <span class="stack-tag">scikit-learn</span>
+            <span class="stack-tag">Optuna</span>
+            <span class="stack-tag">matplotlib</span>
+          </div>
+          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
+        </div>
+
+        <!-- Project 5: HDL Agent -->
+        <div class="project-card fade-in" data-category="llm-agentic">
+          <span class="project-category-label">LLM &amp; Agentic AI</span>
+          <span class="project-company-badge">&#127981; Applied at Kulicke &amp; Soffa</span>
+          <h3>Agentic AI for HDL Code Analysis, Generation &amp; Verification</h3>
+          <p class="project-summary">Multi-agent system with four specialized agents that autonomously parse Verilog/SystemVerilog, generate UVM testbenches with self-correction, and optimize design parameters via RL.</p>
+          <div class="project-details">
+            <p>Targets 60-70% of the chip development cycle spent on verification. Integrates open-source EDA tools (Icarus Verilog, Yosys, Verilator) as agent tools with RAG over IEEE Verilog standards.</p>
+            <p>Supports fully air-gapped deployment with local LLMs (DeepSeek-Coder) for semiconductor IP protection.</p>
+          </div>
+          <div class="project-stack">
+            <span class="stack-tag">LangGraph</span>
+            <span class="stack-tag">DeepSeek-Coder</span>
+            <span class="stack-tag">pyverilog</span>
+            <span class="stack-tag">Icarus Verilog</span>
+            <span class="stack-tag">Yosys</span>
+            <span class="stack-tag">Qdrant</span>
+            <span class="stack-tag">Stable-Baselines3</span>
+            <span class="stack-tag">FastAPI</span>
+            <span class="stack-tag">React</span>
+            <span class="stack-tag">Docker</span>
+          </div>
+          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -165,6 +287,8 @@
             <li>Architected product decoupling in MCT, enabling multi-platform support across 6 machine variants (iFlex-T2/T4/H1/CX, Luminex, Pixalux)</li>
             <li>Integrated <strong>MQTT protocol</strong> for Smart Factory initiative &mdash; real-time machine-to-cloud data streaming for production analytics</li>
             <li>Led code quality modernization: W3&rarr;W4 warning upgrades, PVS-Studio, IWYU, Boost-to-STL migration</li>
+            <li>Built an <strong>LLM-powered SECS/GEM Protocol Assistant (RAG)</strong> using domain knowledge from K&amp;S equipment communication protocols &mdash; enabling natural language queries over SEMI standards and alarm codes for process engineers</li>
+            <li>Developed an <strong>ML-based Wire Bond Quality Prediction</strong> system with Bayesian process optimization, modeled on RapidPro/ATPP machine parameters &mdash; reducing predicted defect rate by 40%</li>
           </ul>
         </div>
 
@@ -210,185 +334,6 @@
     </div>
   </section>
 
-  <!-- ==================== PROJECTS ==================== -->
-  <section id="projects">
-    <div class="container">
-      <h2 class="section-title fade-in">AI/ML Projects</h2>
-
-      <div class="project-filters fade-in">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="llm-agentic">LLM &amp; Agentic AI</button>
-        <button class="filter-btn" data-filter="dl-cv">Deep Learning &amp; CV</button>
-        <button class="filter-btn" data-filter="data-science">Data Science</button>
-        <button class="filter-btn" data-filter="optimization">Process Optimization</button>
-      </div>
-
-      <div class="projects-grid">
-
-        <!-- Project 1: VLM Inspection -->
-        <div class="project-card fade-in" data-category="llm-agentic">
-          <span class="project-category-label">LLM &amp; Agentic AI</span>
-          <h3>Multi-Modal Vision-Language AI for Semiconductor Inspection &amp; Autonomous FA Report Generation</h3>
-          <p class="project-summary">Fine-tuned LLaVA-1.6 with QLoRA for semiconductor defect inspection. Four agentic modules generate Failure Analysis reports in under 2 minutes, replacing a 2-4 hour manual process.</p>
-          <div class="project-details">
-            <p>Built a multi-modal Vision-Language system enabling natural language defect description, root cause hypothesis generation, and severity reasoning directly from inspection images (SEM, optical, wafer map).</p>
-            <p>Four agentic modules (Defect Describer, Root Cause Analyzer, Severity Classifier, Recipe Advisor) correlate defect images with SECS/GEM equipment logs and a historical defect vector database for automated root cause analysis.</p>
-          </div>
-          <div class="project-stack">
-            <span class="stack-tag">LLaVA-1.6</span>
-            <span class="stack-tag">DINOv2</span>
-            <span class="stack-tag">QLoRA/PEFT</span>
-            <span class="stack-tag">LangGraph</span>
-            <span class="stack-tag">SECS/GEM</span>
-            <span class="stack-tag">MQTT</span>
-            <span class="stack-tag">Qdrant</span>
-            <span class="stack-tag">TimescaleDB</span>
-            <span class="stack-tag">FastAPI</span>
-            <span class="stack-tag">Docker</span>
-          </div>
-          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
-        </div>
-
-        <!-- Project 2: HDL Agent -->
-        <div class="project-card fade-in" data-category="llm-agentic">
-          <span class="project-category-label">LLM &amp; Agentic AI</span>
-          <h3>Agentic AI for HDL Code Analysis, Generation &amp; Verification</h3>
-          <p class="project-summary">Multi-agent system with four specialized agents that autonomously parse Verilog/SystemVerilog, generate UVM testbenches with self-correction, and optimize design parameters via RL.</p>
-          <div class="project-details">
-            <p>Targets 60-70% of the chip development cycle spent on verification. Integrates open-source EDA tools (Icarus Verilog, Yosys, Verilator) as agent tools with RAG over IEEE Verilog standards.</p>
-            <p>Supports fully air-gapped deployment with local LLMs (DeepSeek-Coder) for semiconductor IP protection.</p>
-          </div>
-          <div class="project-stack">
-            <span class="stack-tag">LangGraph</span>
-            <span class="stack-tag">DeepSeek-Coder</span>
-            <span class="stack-tag">pyverilog</span>
-            <span class="stack-tag">Icarus Verilog</span>
-            <span class="stack-tag">Yosys</span>
-            <span class="stack-tag">Qdrant</span>
-            <span class="stack-tag">Stable-Baselines3</span>
-            <span class="stack-tag">FastAPI</span>
-            <span class="stack-tag">React</span>
-            <span class="stack-tag">Docker</span>
-          </div>
-          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
-        </div>
-
-        <!-- Project 3: Fab Ops -->
-        <div class="project-card fade-in" data-category="llm-agentic">
-          <span class="project-category-label">LLM &amp; Agentic AI</span>
-          <h3>Multi-Agent Autonomous Fab Operations System</h3>
-          <p class="project-summary">Four specialized agents (Equipment Health, Yield Analyst, Recipe Optimization, Defect Inspector) collaborate to investigate yield excursions end-to-end with real-time MQTT ingestion.</p>
-          <div class="project-details">
-            <p>LangGraph orchestrator coordinates agents from SECS/GEM log anomaly detection to wafer map classification to root cause reporting. Includes human-in-the-loop approval gates and full audit trail for regulated fab compliance.</p>
-            <p>Multi-modal reasoning across SECS/GEM logs, SPC data, and wafer map images.</p>
-          </div>
-          <div class="project-stack">
-            <span class="stack-tag">LangGraph</span>
-            <span class="stack-tag">PyTorch</span>
-            <span class="stack-tag">MQTT</span>
-            <span class="stack-tag">SECS/GEM</span>
-            <span class="stack-tag">ChromaDB</span>
-            <span class="stack-tag">PostgreSQL</span>
-            <span class="stack-tag">Redis</span>
-            <span class="stack-tag">FastAPI</span>
-            <span class="stack-tag">React</span>
-            <span class="stack-tag">Prometheus</span>
-          </div>
-          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
-        </div>
-
-        <!-- Project 4: SECS/GEM RAG -->
-        <div class="project-card fade-in" data-category="llm-agentic">
-          <span class="project-category-label">LLM &amp; Agentic AI</span>
-          <h3>LLM-Powered SECS/GEM Protocol Assistant (RAG)</h3>
-          <p class="project-summary">RAG-powered LLM assistant enabling natural language queries over SEMI standards, equipment specifications, alarm codes, and message formats.</p>
-          <div class="project-details">
-            <p>Fine-tuned retrieval on SECS/GEM documentation with FAISS vector store. Deployed as an interactive web application for equipment and process engineers in semiconductor fabs.</p>
-          </div>
-          <div class="project-stack">
-            <span class="stack-tag">HuggingFace</span>
-            <span class="stack-tag">LangChain</span>
-            <span class="stack-tag">FAISS</span>
-            <span class="stack-tag">Streamlit</span>
-          </div>
-          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
-        </div>
-
-        <!-- Project 5: Wafer Defect -->
-        <div class="project-card fade-in" data-category="dl-cv">
-          <span class="project-category-label">Deep Learning &amp; Computer Vision</span>
-          <h3>Wafer Defect Detection &amp; Classification (WM-811K)</h3>
-          <p class="project-summary">Deep learning pipeline for wafer defect classification on 811K+ wafer maps across 9 defect classes, achieving 95%+ accuracy with AutoEncoder anomaly detection.</p>
-          <div class="project-details">
-            <p>Used ResNet and EfficientNet architectures with AutoEncoder-based anomaly detection for unseen defect patterns. Benchmarked against classical ML baselines (Random Forest, XGBoost). Deployed as containerized inference API.</p>
-          </div>
-          <div class="project-stack">
-            <span class="stack-tag">PyTorch</span>
-            <span class="stack-tag">torchvision</span>
-            <span class="stack-tag">scikit-learn</span>
-            <span class="stack-tag">FastAPI</span>
-            <span class="stack-tag">Docker</span>
-          </div>
-          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
-        </div>
-
-        <!-- Project 6: Yield Prediction -->
-        <div class="project-card fade-in" data-category="data-science">
-          <span class="project-category-label">Data Science &amp; Manufacturing Analytics</span>
-          <h3>Semiconductor Yield Prediction &amp; Explainability (SECOM)</h3>
-          <p class="project-summary">Yield prediction on SECOM manufacturing data (591 sensors, 93.4% class imbalance). Identified top 15 critical parameters using SHAP analysis for targeted process monitoring.</p>
-          <div class="project-details">
-            <p>Applied SMOTE, mutual information, LASSO, and tree-based feature selection. Built an interpretable SHAP dashboard enabling process engineers to understand which parameters to monitor. Models: XGBoost, LightGBM, neural network ensemble.</p>
-          </div>
-          <div class="project-stack">
-            <span class="stack-tag">scikit-learn</span>
-            <span class="stack-tag">XGBoost</span>
-            <span class="stack-tag">LightGBM</span>
-            <span class="stack-tag">SHAP</span>
-            <span class="stack-tag">pandas</span>
-            <span class="stack-tag">Streamlit</span>
-          </div>
-          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
-        </div>
-
-        <!-- Project 7: Predictive Maintenance -->
-        <div class="project-card fade-in" data-category="data-science">
-          <span class="project-category-label">Data Science &amp; Manufacturing Analytics</span>
-          <h3>SECS/GEM Data Analytics &amp; Predictive Maintenance</h3>
-          <p class="project-summary">SECS/GEM analytics pipeline with time-series anomaly detection (Isolation Forest, LSTM) and real-time MQTT integration for equipment failure prediction.</p>
-          <div class="project-details">
-            <p>Developed a Python library that parses SECS/GEM messages, extracts equipment state data, and predicts equipment failures before yield impact. Directly leverages SECS/GEM protocol expertise from KLA/Intel production work.</p>
-          </div>
-          <div class="project-stack">
-            <span class="stack-tag">PyTorch (LSTM)</span>
-            <span class="stack-tag">scikit-learn</span>
-            <span class="stack-tag">paho-mqtt</span>
-            <span class="stack-tag">pandas</span>
-            <span class="stack-tag">FastAPI</span>
-          </div>
-          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
-        </div>
-
-        <!-- Project 8: Wire Bond -->
-        <div class="project-card fade-in" data-category="optimization">
-          <span class="project-category-label">Process Optimization</span>
-          <h3>Wire Bond Quality Prediction &amp; Process Optimization</h3>
-          <p class="project-summary">ML-based wire bond quality prediction with Bayesian optimization, reducing predicted defect rate by 40% through optimal bonding parameter identification.</p>
-          <div class="project-details">
-            <p>Used simulated bonding process data (bond force, ultrasonic power, temperature, loop height). Classified bond pass/fail with root cause analysis and applied Bayesian optimization to identify optimal bonding parameters.</p>
-          </div>
-          <div class="project-stack">
-            <span class="stack-tag">scikit-learn</span>
-            <span class="stack-tag">Optuna</span>
-            <span class="stack-tag">matplotlib</span>
-          </div>
-          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
   <!-- ==================== EDUCATION ==================== -->
   <section id="education">
     <div class="container">
@@ -397,7 +342,7 @@
         <div class="edu-card fade-in">
           <h3>Indian Institute of Technology (IIT), Jodhpur</h3>
           <p class="degree">M.Tech &mdash; Artificial Intelligence</p>
-          <p class="edu-date">June 2024 &mdash; Present</p>
+          <p class="edu-date">June 2024 &mdash; May 2026</p>
         </div>
         <div class="edu-card fade-in">
           <h3>JSS Academy of Technical Education, Noida</h3>
@@ -440,10 +385,6 @@
           <tr>
             <td>AWS Certified ML Engineer &mdash; Associate <span class="cert-badge">In Progress</span></td>
             <td>Amazon Web Services</td>
-          </tr>
-          <tr>
-            <td>Azure AI Engineer Associate (AI-102) <span class="cert-badge">In Progress</span></td>
-            <td>Microsoft</td>
           </tr>
         </tbody>
       </table>
