@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.6)  13 APR 2026 09:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.6)  13 APR 2026 14:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -403,22 +403,22 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 54.
 
-Underfull \hbox (badness 1629) in paragraph at lines 83--83
+Underfull \hbox (badness 1629) in paragraph at lines 82--82
 []|\T1/lmr/m/n/10.95 PyTorch, Ten-sor-Flow, torchvi-
  []
 
 
-Underfull \hbox (badness 6608) in paragraph at lines 83--83
+Underfull \hbox (badness 6608) in paragraph at lines 82--82
 []|\T1/lmr/m/n/10.95 LLaVA, Qwen-VL, DeepSeek-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--83
+Underfull \hbox (badness 10000) in paragraph at lines 82--82
 []|\T1/lmr/m/n/10.95 SPC, Yield Anal-y-sis, Pred.
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 9
-1.
+0.
 (C:\Users\shiva\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1
@@ -428,42 +428,49 @@ a/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/shiva/Ap
 pData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/shiva/Ap
 pData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-36.
+34.
 
 (C:\Users\shiva\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [2]
-Overfull \hbox (9.3874pt too wide) in paragraph at lines 155--156
-\T1/lmr/m/n/10.95 lyzer, Test-bench Gen-er-a-tor, Lint/DRC, De-sign Space Ex-pl
-orer) au-tonomously parse Ver-ilog/SystemVerilog,
- []
-
+) [2{C:/Users/shiva/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.
+enc}]
 [3] (resume_final.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
-Package rerunfilecheck Info: File `resume_final.out' has not changed.
-(rerunfilecheck)             Checksum: E55E77AFC6E6776E27FE08197B7DABF0;3393.
+
+
+Package rerunfilecheck Warning: File `resume_final.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `resume_final.out':
+(rerunfilecheck)             Before: E55E77AFC6E6776E27FE08197B7DABF0;3393
+(rerunfilecheck)             After:  1AD1C126D392C85F2CE7AEC4E6A1495C;2826.
  ) 
 Here is how much of TeX's memory you used:
- 10221 strings out of 467871
- 159082 string characters out of 5418377
+ 10222 strings out of 467871
+ 159095 string characters out of 5418377
  599060 words of memory out of 5000000
  38969 multiletter control sequences out of 15000+600000
  665743 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,8n,79p,1203b,558s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/shiva/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pf
-b><C:/Users/shiva/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
-b><C:/Users/shiva/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb
-><C:/Users/shiva/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb
-><C:/Users/shiva/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb
-><C:/Users/shiva/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb
->
-Output written on resume_final.pdf (3 pages, 173450 bytes).
+ 75i,8n,79p,1203b,560s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{subsection.4.5} has been referenced but does not ex
+ist, replaced by a fixed one
+
+<C:/Users/shiva/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb>
+<C:/Users/shiva/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb>
+<C:/Users/shiva/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb>
+<C:/Users/shiva/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><
+C:/Users/shiva/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><
+C:/Users/shiva/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><
+C:/Users/shiva/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
+Output written on resume_final.pdf (3 pages, 176512 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
+ 118 PDF objects out of 1000 (max. 8388607)
  16 named destinations out of 1000 (max. 500000)
  97 words of extra memory for PDF output out of 10000 (max. 10000000)
 

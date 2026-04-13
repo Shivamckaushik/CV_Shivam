@@ -62,8 +62,7 @@
 % ============================================================
 \section{Professional Summary}
 
-AI/ML engineer with 9 years of semiconductor and systems software experience spanning advanced packaging, IC inspection, and factory automation at \textbf{Kulicke \& Soffa} and \textbf{KLA}. Currently pursuing \textbf{M.Tech in Artificial Intelligence from IIT Jodhpur}. Building production-grade AI systems---multi-agent architectures, vision-language models, and knowledge graph platforms---specifically for semiconductor manufacturing, inspection, and EDA workflows. One of a rare cohort who combines deep fab-floor domain knowledge (SECS/GEM, wire bonding, pick-and-place, machine vision) with modern AI/ML engineering (LangGraph, PyTorch, LLaVA, RAG, multi-agent orchestration). Proven ability to ship production C++ software across three countries, lead engineering teams, and deliver systems deployed to military and semiconductor customers.
-
+AI/ML engineer with 9 years of semiconductor and systems software experience spanning advanced packaging, IC inspection, and factory automation at \textbf{Kulicke \& Soffa} and \textbf{KLA}. Currently pursuing \textbf{M.Tech in Artificial Intelligence from IIT Jodhpur}. Building production-grade AI systems---multi-agent architectures, vision-language models, and knowledge graph platforms---specifically for semiconductor manufacturing, inspection, and EDA workflows. One of a rare cohort who combines deep fab-floor domain knowledge (SECS/GEM, wire bonding, pick-and-place, machine vision) with modern AI/ML engineering (LangGraph, PyTorch, LLaVA, RAG, multi-agent orchestration).
 % ============================================================
 % CORE COMPETENCIES
 % ============================================================
@@ -76,7 +75,7 @@ AI/ML engineer with 9 years of semiconductor and systems software experience spa
 PyTorch, TensorFlow, torchvision & Wafer Defect Inspection (KLA) & C++ (9 years production) \\
 LangGraph, LangChain, RAG & Adv. Packaging \& Wire Bonding (K\&S) & Python \\
 LLaVA, Qwen-VL, DeepSeek-Coder & SECS/GEM Protocol (Intel integration) & FastAPI \\
-XGBoost, scikit-learn, SHAP & Pick \& Place (iFlex, Luminex, Pixalux) & React, Streamlit \\
+XGBoost, scikit-learn, SHAP & Pick \& Place (iFlex, Luminex, Pixalux) & \\
 Computer Vision, CNNs, ViT & SPC, Yield Analysis, Pred. Maintenance & Git/CI-CD \\
 Multi-Agent Orchestration & Smart Factory / Industry 4.0 & \\
 \hline
@@ -132,8 +131,8 @@ Multi-Agent Orchestration & Smart Factory / Industry 4.0 & \\
 \subsection{2. Wafer Defect Detection \& Classification (WM-811K)}
 {\small \href{https://github.com/Shivamckaushik/Visual-inspection-for-Wafer-Defect-Detection-Classification-WM-811K-.git}{GitHub}}
 \begin{itemize}[leftmargin=*, nosep, topsep=3pt]
-    \item Built an end-to-end deep learning pipeline for wafer defect pattern classification on the WM-811K dataset (811K+ wafer maps, 9 defect classes) using ResNet18 and EfficientNet-B0 architectures, with a ConvAutoEncoder for anomaly detection on unseen defect patterns. Achieved 96.2\% overall test accuracy and 90.5\% defect-class accuracy on a severely class-imbalanced dataset (103,201 normal vs 104 Near-Full samples); resolved class collapse via WeightedRandomSampler and diagnosed 6 critical training bugs across normalization, BatchNorm domain shift, and loss double-suppression.
-    \item Deployed as a FastAPI inference server with \texttt{/classify} and \texttt{/anomaly-detect} endpoints; live end-to-end API testing confirmed 91--94\% confidence across 7 of 8 defect classes on real WM-811K wafer maps. Anomaly threshold calibrated at the 95th percentile of normal-wafer reconstruction error.
+    \item Built an end-to-end deep learning pipeline for wafer defect pattern classification on the WM-811K dataset (811K+ wafer maps, 9 defect classes) using ResNet18 and EfficientNet-B0, with a ConvAutoEncoder for anomaly detection on unseen patterns. Achieved 97.83\% overall test accuracy and 91.95\% defect-class accuracy on a severely class-imbalanced dataset (103,201 normal vs 104 Near-Full samples). Improved Scratch F1 from 0.48 $\rightarrow$ 0.820 by moving from 64$\times$64 to 128$\times$128 resolution, adding FocalLoss($\gamma$=2) and synthetic scratch augmentation; diagnosed critical training bugs across normalization, BatchNorm domain shift, loss double-suppression, and \texttt{torch.compile} checkpoint corruption.
+    \item Trained a two-stage classifier (binary Stage 1 $\rightarrow$ 8-class Stage 2) for comparison: Stage 1 achieved 98.45\% binary accuracy but error propagation reduced combined accuracy to 96.74\%, confirming single-stage as the correct production model. Applied 8-view Test-Time Augmentation (+0.33\% overall, stabilises low-support classes) and built a v2+v3 ensemble classifier with per-class confidence thresholding and human-review routing for safety-critical predictions.
     \item \projectstack{PyTorch, torchvision, scikit-learn, FastAPI}
 \end{itemize}
 
@@ -148,13 +147,6 @@ Multi-Agent Orchestration & Smart Factory / Industry 4.0 & \\
 \begin{itemize}[leftmargin=*, nosep, topsep=3pt]
     \item Developed ML-based wire bond quality prediction using process data (bond force, ultrasonic power, temperature, loop height) modeled on K\&S RapidPro and ATPP machine parameters. Classified bond pass/fail with root cause analysis and applied Bayesian optimization to identify optimal bonding parameters, reducing predicted defect rate by 40\%.
     \item \projectstack{scikit-learn, Optuna, matplotlib}
-\end{itemize}
-
-\subsection{5. Agentic AI for HDL Code Analysis, Generation \& Verification \textnormal{\textit{(Applied at Kulicke \& Soffa)}}}
-\begin{itemize}[leftmargin=*, nosep, topsep=3pt]
-    \item Architected a multi-agent system for semiconductor HDL verification: four specialized agents (RTL Analyzer, Testbench Generator, Lint/DRC, Design Space Explorer) autonomously parse Verilog/SystemVerilog, generate UVM testbenches with self-correction loops, and optimize design parameters via reinforcement learning---targeting 60--70\% of the chip development cycle spent on verification.
-    \item Integrated open-source EDA tools (Icarus Verilog, Yosys, Verilator) as agent tools with RAG over IEEE Verilog standards and design pattern libraries. Supports fully air-gapped deployment with local LLMs for semiconductor IP protection.
-    \item \projectstack{LangGraph, DeepSeek-Coder, pyverilog, Icarus Verilog, Yosys, Qdrant, Stable-Baselines3, Optuna, FastAPI, React, Docker}
 \end{itemize}
 
 % ============================================================

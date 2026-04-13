@@ -127,9 +127,6 @@
           <div class="skill-tags">
             <span class="skill-tag">C++ (9 yrs)</span>
             <span class="skill-tag">Python</span>
-            <span class="skill-tag">FastAPI</span>
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Streamlit</span>
             <span class="skill-tag">Git/CI-CD</span>
           </div>
         </div>
@@ -189,11 +186,11 @@
           <div class="project-links">
             <a href="https://github.com/Shivamckaushik/Visual-inspection-for-Wafer-Defect-Detection-Classification-WM-811K-.git" target="_blank" class="project-link">&#128279; GitHub</a>
           </div>
-          <p class="project-summary">End-to-end deep learning pipeline for wafer defect pattern classification on 811K+ wafer maps across 9 defect classes, achieving 96.2% overall test accuracy with ConvAutoEncoder anomaly detection.</p>
+          <p class="project-summary">End-to-end deep learning pipeline for wafer defect pattern classification on 811K+ wafer maps across 9 defect classes, achieving 97.83% overall test accuracy and 91.95% defect-class accuracy with ResNet18, EfficientNet-B0, and ConvAutoEncoder anomaly detection.</p>
           <div class="project-details">
             <ul>
-              <li>Built an end-to-end deep learning pipeline for wafer defect pattern classification on the WM-811K dataset (811K+ wafer maps, 9 defect classes) using ResNet18 and EfficientNet-B0 architectures, with a ConvAutoEncoder for anomaly detection on unseen defect patterns. Achieved 96.2% overall test accuracy and 90.5% defect-class accuracy on a severely class-imbalanced dataset (103,201 normal vs 104 Near-Full samples); resolved class collapse via WeightedRandomSampler and diagnosed 6 critical training bugs across normalization, BatchNorm domain shift, and loss double-suppression.</li>
-              <li>Deployed as a FastAPI inference server with <code>/classify</code> and <code>/anomaly-detect</code> endpoints; live end-to-end API testing confirmed 91&ndash;94% confidence across 7 of 8 defect classes on real WM-811K wafer maps. Anomaly threshold calibrated at the 95th percentile of normal-wafer reconstruction error.</li>
+              <li>Built an end-to-end deep learning pipeline for wafer defect pattern classification on the WM-811K dataset (811K+ wafer maps, 9 defect classes) using ResNet18 and EfficientNet-B0, with a ConvAutoEncoder for anomaly detection on unseen patterns. Achieved 97.83% overall test accuracy and 91.95% defect-class accuracy on a severely class-imbalanced dataset (103,201 normal vs 104 Near-Full samples). Improved Scratch F1 from 0.48 &rarr; 0.820 by moving from 64&times;64 to 128&times;128 resolution, adding FocalLoss(&gamma;=2) and synthetic scratch augmentation; diagnosed critical training bugs across normalization, BatchNorm domain shift, loss double-suppression, and torch.compile checkpoint corruption.</li>
+              <li>Trained a two-stage classifier (binary Stage 1 &rarr; 8-class Stage 2) for comparison: Stage 1 achieved 98.45% binary accuracy but error propagation reduced combined accuracy to 96.74%, confirming single-stage as the correct production model. Applied 8-view Test-Time Augmentation (+0.33% overall, stabilises low-support classes) and built a v2+v3 ensemble classifier with per-class confidence thresholding and human-review routing for safety-critical predictions.</li>
             </ul>
           </div>
           <div class="project-stack">
@@ -240,30 +237,6 @@
           <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
         </div>
 
-        <!-- Project 5: HDL Agent -->
-        <div class="project-card fade-in" data-category="llm-agentic">
-          <span class="project-category-label">LLM &amp; Agentic AI</span>
-          <span class="project-company-badge">&#127981; Applied at Kulicke &amp; Soffa</span>
-          <h3>Agentic AI for HDL Code Analysis, Generation &amp; Verification</h3>
-          <p class="project-summary">Multi-agent system with four specialized agents that autonomously parse Verilog/SystemVerilog, generate UVM testbenches with self-correction, and optimize design parameters via RL.</p>
-          <div class="project-details">
-            <p>Targets 60-70% of the chip development cycle spent on verification. Integrates open-source EDA tools (Icarus Verilog, Yosys, Verilator) as agent tools with RAG over IEEE Verilog standards.</p>
-            <p>Supports fully air-gapped deployment with local LLMs (DeepSeek-Coder) for semiconductor IP protection.</p>
-          </div>
-          <div class="project-stack">
-            <span class="stack-tag">LangGraph</span>
-            <span class="stack-tag">DeepSeek-Coder</span>
-            <span class="stack-tag">pyverilog</span>
-            <span class="stack-tag">Icarus Verilog</span>
-            <span class="stack-tag">Yosys</span>
-            <span class="stack-tag">Qdrant</span>
-            <span class="stack-tag">Stable-Baselines3</span>
-            <span class="stack-tag">FastAPI</span>
-            <span class="stack-tag">React</span>
-            <span class="stack-tag">Docker</span>
-          </div>
-          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
-        </div>
 
       </div>
     </div>
