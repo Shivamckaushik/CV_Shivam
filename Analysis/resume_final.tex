@@ -120,11 +120,11 @@ Multi-Agent Orchestration & Smart Factory / Industry 4.0 & \\
 \section{AI/ML Projects}
 
 \subsection{1. Multi-Modal Vision-Language AI for Semiconductor Inspection \& Autonomous FA Report Generation}
-{\small \href{https://github.com/Shivamckaushik/SemiFA}{GitHub} \enspace|\enspace \href{https://huggingface.co/datasets/ShivamChand/SemiFA-930}{HuggingFace Dataset}}
+{\small \href{https://github.com/Shivamckaushik/SemiFA}{GitHub} \enspace|\enspace \href{https://huggingface.co/datasets/ShivamChand/SemiFA-930}{HuggingFace Dataset} \enspace|\enspace \href{https://arxiv.org/abs/2604.13236}{arXiv:2604.13236}}
 \begin{itemize}[leftmargin=*, nosep, topsep=3pt]
     \item Built a four-agent LangGraph pipeline (Defect Describer, Root Cause Analyzer, Severity Classifier, Recipe Advisor) that fuses DINOv2 visual embeddings, SECS/GEM-format equipment telemetry, and a Qdrant historical defect retrieval database into a unified LLaVA-1.6 context---generating structured Failure Analysis reports in 48 seconds, replacing a 2--4 hour manual process.
     \item Trained a DINOv2 + MLP defect classifier on SemiFA-930, a self-constructed 930-image dataset spanning 9 semiconductor defect classes (SEM, optical, wafer map); achieved 92.1\% accuracy / 0.917 Macro F1 with only 214K trainable parameters vs.\ 23.5M for ResNet-50 (82.9\%).
-    \item Publicly released SemiFA-930 dataset on HuggingFace; paper prepared for arXiv submission (cs.CV).
+    \item Publicly released SemiFA-930 dataset on HuggingFace; paper published on arXiv (cs.CV) --- \href{https://arxiv.org/abs/2604.13236}{arXiv:2604.13236}.
     \item \projectstack{LLaVA-1.6, DINOv2, QLoRA/PEFT, LangGraph, SECS/GEM, Qdrant, FastAPI, ReportLab, Streamlit}
 \end{itemize}
 
