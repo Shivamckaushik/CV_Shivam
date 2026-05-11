@@ -726,6 +726,66 @@ section {
   padding: 24px;
 }
 
+.publication-highlight {
+  background: var(--bg-primary);
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  padding: 28px 32px;
+  max-width: 800px;
+  margin: 0 auto 32px;
+  position: relative;
+}
+
+.publication-highlight .pub-label {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.publication-highlight h3 {
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.publication-highlight .pub-meta {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.publication-highlight .pub-recognition {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.publication-highlight .pub-links {
+  margin-top: 12px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.publication-highlight .pub-links a {
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.publication-highlight .pub-links a:hover {
+  border-bottom-color: var(--accent);
+}
+
 .achievement-card h3 {
   color: var(--accent);
   font-size: 1rem;
