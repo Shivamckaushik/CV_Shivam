@@ -151,7 +151,7 @@
         <!-- Project 1: VLM Inspection -->
         <div class="project-card fade-in" data-category="llm-agentic">
           <span class="project-category-label">LLM &amp; Agentic AI</span>
-          <h3>Multi-Modal Vision-Language AI for Semiconductor Inspection &amp; Autonomous FA Report Generation</h3>
+          <h3>SemiFA: An Agentic Multi-Modal Framework for Autonomous Semiconductor Failure Analysis Report Generation</h3>
           <div class="project-links">
             <a href="https://github.com/Shivamckaushik/SemiFA" target="_blank" class="project-link">&#128279; GitHub</a>
             <a href="https://huggingface.co/datasets/ShivamChand/SemiFA-930" target="_blank" class="project-link">&#129303; HuggingFace Dataset</a>
@@ -221,7 +221,31 @@
           <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
         </div>
 
-        <!-- Project 4: Wire Bond -->
+        <!-- Project 4: K&S Customer Support Chatbot -->
+        <div class="project-card fade-in" data-category="llm-agentic">
+          <span class="project-category-label">LLM &amp; Agentic AI</span>
+          <span class="project-company-badge">&#127981; Applied at Kulicke &amp; Soffa</span>
+          <h3>Customer Support Chatbot for K&amp;S Equipment Clients (RAG + ChromaDB)</h3>
+          <p class="project-summary">RAG-based customer support chatbot for K&amp;S semiconductor equipment clients, enabling engineers to query machine manuals, troubleshooting guides, spare-parts catalogues, and service bulletins in natural language &mdash; reducing average ticket resolution time.</p>
+          <div class="project-details">
+            <ul>
+              <li>RAG pipeline ingests and chunks K&amp;S product documentation (RapidPro, ATPP, iFlex series) into <strong>ChromaDB</strong> vector store with sentence-transformer embeddings; retrieves top-k semantically relevant passages to augment LLM context and prevent hallucination on equipment-specific queries.</li>
+              <li>Implemented conversation memory and session history to support multi-turn diagnostic dialogues; added confidence-score filtering to route low-certainty queries to human support agents.</li>
+            </ul>
+          </div>
+          <div class="project-stack">
+            <span class="stack-tag">LangChain</span>
+            <span class="stack-tag">RAG</span>
+            <span class="stack-tag">ChromaDB</span>
+            <span class="stack-tag">Sentence-Transformers</span>
+            <span class="stack-tag">HuggingFace Transformers</span>
+            <span class="stack-tag">FastAPI</span>
+            <span class="stack-tag">Streamlit</span>
+          </div>
+          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
+        </div>
+
+        <!-- Project 5: Wire Bond -->
         <div class="project-card fade-in" data-category="optimization">
           <span class="project-category-label">Process Optimization</span>
           <span class="project-company-badge">&#127981; Applied at Kulicke &amp; Soffa</span>
@@ -239,6 +263,35 @@
         </div>
 
 
+        <!-- Project 6: E-Commerce RAG Chatbot -->
+        <div class="project-card fade-in" data-category="llm-agentic">
+          <span class="project-category-label">LLM &amp; Agentic AI</span>
+          <h3>E-Commerce RAG Customer Support Chatbot &mdash; Production-Deployed on AWS</h3>
+          <p class="project-summary">Production-ready e-commerce customer service chatbot using RAG, answering natural-language queries over company policy documents with source-attributed, citation-grounded responses and zero hallucination on out-of-scope questions. Deployed end-to-end on AWS ECS Fargate.</p>
+          <div class="project-details">
+            <ul>
+              <li>Implemented a three-mode retrieval engine: <strong>AWS Bedrock Knowledge Base</strong> (vector similarity), <strong>BM25</strong> keyword search, and a <strong>hybrid mode</strong> that alpha-weights and normalises scores from both &mdash; configurable at runtime via the Streamlit UI sidebar.</li>
+              <li>Built conversation memory preserving 6-turn history and a regex-based user context extractor (name, order number, email) that personalises responses across the session; conversations exportable to JSON for audit trails.</li>
+              <li>Deployed end-to-end on <strong>AWS</strong>: Docker image stored in <strong>ECR</strong>; Streamlit app served via <strong>ECS Fargate</strong> (serverless containers); knowledge base documents in <strong>S3</strong>; secrets managed in <strong>SSM Parameter Store</strong>; logs streamed to <strong>CloudWatch</strong>; IAM roles scoped to least-privilege Bedrock and S3 access.</li>
+            </ul>
+          </div>
+          <div class="project-stack">
+            <span class="stack-tag">Python</span>
+            <span class="stack-tag">LangChain</span>
+            <span class="stack-tag">AWS Bedrock</span>
+            <span class="stack-tag">ECS Fargate</span>
+            <span class="stack-tag">ECR</span>
+            <span class="stack-tag">S3</span>
+            <span class="stack-tag">SSM Parameter Store</span>
+            <span class="stack-tag">CloudWatch</span>
+            <span class="stack-tag">BM25</span>
+            <span class="stack-tag">boto3</span>
+            <span class="stack-tag">Streamlit</span>
+            <span class="stack-tag">Docker</span>
+          </div>
+          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -251,24 +304,22 @@
 
         <div class="timeline-item fade-in">
           <div class="timeline-header">
-            <span class="timeline-role">Software Engineer &mdash; Semiconductor Assembly &amp; Smart Factory AI</span>
-            <span class="timeline-date">Sept 2020 &mdash; Present</span>
+            <span class="timeline-role">Software Analyst &mdash; Semiconductor Assembly &amp; Smart Factory AI</span>
+            <span class="timeline-date">Sept 2020 &mdash; Oct 2025</span>
           </div>
           <div class="timeline-company">Kulicke &amp; Soffa (K&amp;S), Netherlands &amp; Singapore</div>
           <div class="timeline-desc">via ASM Technologies | Global leader in semiconductor assembly equipment for advanced packaging</div>
           <ul>
-            <li>Developing and optimizing the C++ software stack for RapidPro and ATPP wire bonding machines, engineering real-time machine control systems</li>
-            <li>Architected product decoupling in MCT, enabling multi-platform support across 6 machine variants (iFlex-T2/T4/H1/CX, Luminex, Pixalux)</li>
-            <li>Integrated <strong>MQTT protocol</strong> for Smart Factory initiative &mdash; real-time machine-to-cloud data streaming for production analytics</li>
-            <li>Led code quality modernization: W3&rarr;W4 warning upgrades, PVS-Studio, IWYU, Boost-to-STL migration</li>
-            <li>Built an <strong>LLM-powered SECS/GEM Protocol Assistant (RAG)</strong> using domain knowledge from K&amp;S equipment communication protocols &mdash; enabling natural language queries over SEMI standards and alarm codes for process engineers</li>
-            <li>Developed an <strong>ML-based Wire Bond Quality Prediction</strong> system with Bayesian process optimization, modeled on RapidPro/ATPP machine parameters &mdash; reducing predicted defect rate by 40%</li>
+            <li>Built three <strong>production agentic AI systems</strong> grounded in real K&amp;S equipment data: (1) an <strong>LLM-powered SECS/GEM Protocol Assistant</strong> (RAG, FAISS) enabling natural-language queries over SEMI standards, alarm codes, and equipment specs; (2) an <strong>ML Wire Bond Quality Prediction</strong> agent with Bayesian process optimization on RapidPro/ATPP sensor parameters &mdash; reducing predicted defect rate by <strong>40%</strong>; (3) a <strong>RAG-based Customer Support agent</strong> over K&amp;S product documentation (ChromaDB, sentence-transformer embeddings).</li>
+            <li>Designed the <strong>Smart Factory AI data backbone</strong>: integrated <strong>MQTT</strong> into the Machine Configuration Tool (MCT) for live machine-to-cloud streaming of high-frequency bond-process telemetry across 6 machine variants (iFlex-T2/T4/H1/CX, Luminex, Pixalux) &mdash; providing the real-time sensor feed consumed by AI inference and production analytics pipelines.</li>
+            <li>Engineered the <strong>C++ real-time control and data-acquisition layer</strong> (RapidPro, ATPP wire bonding machines) that generates ground-truth process telemetry (bond force, ultrasonic power, temperature, loop height) powering ML defect prediction and Bayesian parameter optimization.</li>
+            <li>Hardened the <strong>observability and reliability</strong> of the AI data pipeline through compiler warning upgrades (W3&rarr;W4), PVS-Studio static analysis, IWYU, and Boost&rarr;STL migration &mdash; ensuring data integrity for downstream ML workloads.</li>
           </ul>
         </div>
 
         <div class="timeline-item fade-in">
           <div class="timeline-header">
-            <span class="timeline-role">Software Engineer &mdash; IC Inspection &amp; Machine Vision</span>
+            <span class="timeline-role">Senior Software Engineer &mdash; IC Inspection &amp; Machine Vision</span>
             <span class="timeline-date">July 2018 &mdash; Sept 2020</span>
           </div>
           <div class="timeline-company">Quest Global Technologies (client: KLA/ICOS), Bangalore</div>
@@ -278,17 +329,6 @@
             <li>Developed data logging and analytics pipelines for production metrics: throughput, taper parameters, per-head performance</li>
             <li>Implemented <strong>SECS/GEM interface for Intel</strong> &mdash; semiconductor industry standard for equipment-to-host communication</li>
             <li>Engineered granular per-head yield-loss diagnostics for YZ1/YZ2/YZ4 pick &amp; place heads</li>
-          </ul>
-        </div>
-
-        <div class="timeline-item fade-in">
-          <div class="timeline-header">
-            <span class="timeline-role">Software Engineer &mdash; Telecom &amp; Embedded Systems</span>
-            <span class="timeline-date">2018</span>
-          </div>
-          <div class="timeline-company">Quest Global Technologies (client: Reliance Jio), Bangalore</div>
-          <ul>
-            <li>Developed LibWebSocket server for IoT smart speaker integration with ONT router &mdash; embedded systems for Jio's IoT ecosystem</li>
           </ul>
         </div>
 

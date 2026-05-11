@@ -50,11 +50,12 @@
 % ============================================================
 \begin{center}
     {\LARGE\bfseries SHIVAM CHAND KAUSHIK}\\[4pt]
-    {\large\color{accent}\textbf{AI/ML Engineer \textbar{} Semiconductor Domain Expert}}\\[6pt]
+    {\large\color{accent}\textbf{Agentic AI Engineer \textbar{} Multi-Agent Systems \& GenAI \textbar{} LangGraph $\cdot$ Python $\cdot$ FastAPI}}\\[6pt]
     Bangalore, India \enspace$\cdot$\enspace
     +91-8310644891 \enspace$\cdot$\enspace
-    \href{mailto:shivamckaushik@gmail.com}{shivamckaushik@gmail.com} \enspace$\cdot$\enspace
-    \href{https://www.linkedin.com/in/shivam-chand-kaushik-34a723a8}{LinkedIn}
+    \href{mailto:shivamiitj9@gmail.com}{shivamiitj9@gmail.com} \enspace$\cdot$\enspace
+    \href{https://www.linkedin.com/in/shivam-chand-kaushik-34a723a8}{LinkedIn} \enspace$\cdot$\enspace
+    \href{https://github.com/Shivamckaushik/}{GitHub}
 \end{center}
 
 % ============================================================
@@ -62,7 +63,7 @@
 % ============================================================
 \section{Professional Summary}
 
-AI/ML engineer with 9 years of semiconductor and systems software experience spanning advanced packaging, IC inspection, and factory automation at \textbf{Kulicke \& Soffa} and \textbf{KLA}. Currently pursuing \textbf{M.Tech in Artificial Intelligence from IIT Jodhpur}. Building production-grade AI systems---multi-agent architectures, vision-language models, and knowledge graph platforms---specifically for semiconductor manufacturing, inspection, and EDA workflows. One of a rare cohort who combines deep fab-floor domain knowledge (SECS/GEM, wire bonding, pick-and-place, machine vision) with modern AI/ML engineering (LangGraph, PyTorch, LLaVA, RAG, multi-agent orchestration).
+Agentic AI engineer with 9 years of semiconductor systems software experience (C++, SECS/GEM, smart factory), transitioning into \textbf{multi-agent LLM orchestration, RAG pipelines, and production-grade AI automation}. \textbf{M.Tech AI, IIT Jodhpur}. \textbf{Published on arXiv (cs.CV, \href{https://arxiv.org/abs/2604.13236}{2604.13236})} --- work on autonomous semiconductor Failure Analysis \textbf{highlighted by \textcolor{accent}{Andre Zayarni, Co-founder of Qdrant}}, validating real-world applicability at chip manufacturing scale. Built four-agent \textbf{LangGraph} pipelines (LLaVA-1.6, DINOv2, Qdrant, FastAPI) compressing several hours of expert FA work into \textbf{48-second automated reports}.
 % ============================================================
 % CORE COMPETENCIES
 % ============================================================
@@ -70,14 +71,13 @@ AI/ML engineer with 9 years of semiconductor and systems software experience spa
 
 \begin{tabularx}{\textwidth}{|X|X|X|}
 \hline
-\textbf{AI/ML \& Deep Learning} & \textbf{Semiconductor Domain} & \textbf{Software \& Infrastructure} \\
+\textbf{Agentic AI \& GenAI} & \textbf{ML \& Computer Vision} & \textbf{Software \& Cloud} \\
 \hline
-PyTorch, TensorFlow, torchvision & Wafer Defect Inspection (KLA) & C++ (9 years production) \\
-LangGraph, LangChain, RAG & Adv. Packaging \& Wire Bonding (K\&S) & Python \\
-LLaVA, Qwen-VL, DeepSeek-Coder & SECS/GEM Protocol (Intel integration) & FastAPI \\
-XGBoost, scikit-learn, SHAP & Pick \& Place (iFlex, Luminex, Pixalux) & \\
-Computer Vision, CNNs, ViT & SPC, Yield Analysis, Pred. Maintenance & Git/CI-CD \\
-Multi-Agent Orchestration & Smart Factory / Industry 4.0 & \\
+Multi-Agent Orchestration (LangGraph) & PyTorch, TensorFlow, torchvision & Python (2 years) \\
+LangChain, RAG, Vector Databases & CNNs, ViTs, DINOv2 & C++ (9 years production) \\
+LLaVA, Qwen-VL, QLoRA/PEFT & XGBoost, scikit-learn, SHAP & FastAPI \\
+Autonomous Workflow Automation & Computer Vision, Anomaly Detection & Git/CI-CD \\
+Qdrant, FAISS, ChromaDB & Streamlit, ReportLab (AI dashboards) & \\
 \hline
 \end{tabularx}
 
@@ -86,26 +86,20 @@ Multi-Agent Orchestration & Smart Factory / Industry 4.0 & \\
 % ============================================================
 \section{Work Experience}
 
-\jobtitle{Software Engineer --- Semiconductor Assembly \& Smart Factory AI}{Kulicke \& Soffa (K\&S), Netherlands \& Singapore}{Sept 2020 --- Present}{via ASM Technologies | K\&S is a global leader in semiconductor assembly equipment for advanced packaging.}
+\jobtitle{Software Analyst --- Semiconductor Assembly \& Smart Factory AI}{Kulicke \& Soffa (K\&S), Netherlands \& Singapore}{Sept 2020 --- Oct 2025}{via ASM Technologies | K\&S is a global leader in semiconductor assembly equipment for advanced packaging.}
 \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
-    \item Developing and optimizing the C++ software stack for RapidPro and ATPP wire bonding machines, engineering real-time machine control systems that process high-frequency sensor data and manage process parameter optimization.
-    \item Architected product decoupling in the Machine Configuration Tool (MCT), enabling multi-platform support across 6 machine variants (iFlex-T2/T4/H1/CX, Luminex, Pixalux).
-    \item Integrated \textbf{MQTT protocol} into MCT for the Smart Factory initiative, enabling real-time machine-to-cloud data streaming for production analytics.
-    \item Led code quality modernization: compiler warning upgrades (W3 to W4), static analysis (PVS-Studio), IWYU implementation, and Boost-to-STL migration.
-    \item Applied AI to K\&S semiconductor work: built an \textbf{LLM-powered SECS/GEM Protocol Assistant (RAG)} leveraging deep K\&S equipment protocol knowledge, and an \textbf{ML-based Wire Bond Quality Prediction} system with Bayesian process optimization modeled on RapidPro/ATPP machine parameters---reducing predicted defect rate by 40\%.
+    \item Built three \textbf{production agentic AI systems} grounded in real K\&S equipment data: (1) an \textbf{LLM-powered SECS/GEM Protocol Assistant} (RAG, FAISS) enabling natural-language queries over SEMI standards, alarm codes, and equipment specs; (2) an \textbf{ML Wire Bond Quality Prediction} agent with Bayesian process optimization on RapidPro/ATPP sensor parameters---reducing predicted defect rate by \textbf{40\%}; (3) a \textbf{RAG-based Customer Support agent} over K\&S product documentation (ChromaDB, sentence-transformer embeddings).
+    \item Designed the \textbf{Smart Factory AI data backbone}: integrated \textbf{MQTT} into the Machine Configuration Tool (MCT) for live machine-to-cloud streaming of high-frequency bond-process telemetry across 6 machine variants (iFlex-T2/T4/H1/CX, Luminex, Pixalux)---providing the real-time sensor feed consumed by AI inference and production analytics pipelines.
+    \item Engineered the \textbf{C++ real-time control and data-acquisition layer} (RapidPro, ATPP wire bonding machines) that generates ground-truth process telemetry (bond force, ultrasonic power, temperature, loop height) powering ML defect prediction and Bayesian parameter optimization.
+    \item Hardened the \textbf{observability and reliability} of the AI data pipeline through compiler warning upgrades (W3$\to$W4), PVS-Studio static analysis, IWYU, and Boost$\to$STL migration---ensuring data integrity for downstream ML workloads.
 \end{itemize}
 
-\jobtitle{Software Engineer --- IC Inspection \& Machine Vision}{Quest Global Technologies (client: KLA/ICOS)}{July 2018 --- Sept 2020}{Bangalore | KLA is the world's leading semiconductor process control and inspection equipment company.}
+\jobtitle{Senior Software Engineer --- IC Inspection \& Machine Vision}{Quest Global Technologies (client: KLA/ICOS)}{July 2018 --- Sept 2020}{Bangalore | KLA is the world's leading semiconductor process control and inspection equipment company.}
 \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
     \item Built a Python-based hardware simulator for the ICOS T800 Gantry System---a TCP/IP server modeling machine behavior for offline testing and digital-twin development.
     \item Developed data logging and analytics pipelines for production metrics: throughput tracking, taper parameter monitoring, and per-head performance analysis.
     \item Implemented \textbf{SECS/GEM interface for Intel}---the semiconductor industry standard protocol for equipment-to-host communication in automated fabs.
     \item Engineered granular process control: independent per-head yield-loss diagnostics for YZ1/YZ2/YZ4 pick \& place heads.
-\end{itemize}
-
-\jobtitle{Software Engineer --- Telecom \& Embedded Systems}{Quest Global Technologies (client: Reliance Jio)}{2018}{Bangalore}
-\begin{itemize}[leftmargin=*, nosep, topsep=2pt]
-    \item Developed LibWebSocket server for IoT smart speaker integration with ONT router---embedded systems communication architecture for Jio's IoT ecosystem.
 \end{itemize}
 
 \jobtitle{Software Engineer --- Aerospace \& Defense Systems}{AxisCades Aerospace \& Technology}{May 2016 --- June 2018}{Bangalore}
@@ -119,13 +113,14 @@ Multi-Agent Orchestration & Smart Factory / Industry 4.0 & \\
 % ============================================================
 \section{AI/ML Projects}
 
-\subsection{1. Multi-Modal Vision-Language AI for Semiconductor Inspection \& Autonomous FA Report Generation}
+\subsection{1. SemiFA: An Agentic Multi-Modal Framework for Autonomous Semiconductor Failure Analysis Report Generation}
 {\small \href{https://github.com/Shivamckaushik/SemiFA}{GitHub} \enspace|\enspace \href{https://huggingface.co/datasets/ShivamChand/SemiFA-930}{HuggingFace Dataset} \enspace|\enspace \href{https://arxiv.org/abs/2604.13236}{arXiv:2604.13236}}
 \begin{itemize}[leftmargin=*, nosep, topsep=3pt]
     \item Built a four-agent LangGraph pipeline (Defect Describer, Root Cause Analyzer, Severity Classifier, Recipe Advisor) that fuses DINOv2 visual embeddings, SECS/GEM-format equipment telemetry, and a Qdrant historical defect retrieval database into a unified LLaVA-1.6 context---generating structured Failure Analysis reports in 48 seconds, replacing a 2--4 hour manual process.
     \item Trained a DINOv2 + MLP defect classifier on SemiFA-930, a self-constructed 930-image dataset spanning 9 semiconductor defect classes (SEM, optical, wafer map); achieved 92.1\% accuracy / 0.917 Macro F1 with only 214K trainable parameters vs.\ 23.5M for ResNet-50 (82.9\%).
     \item Publicly released SemiFA-930 dataset on HuggingFace; paper published on arXiv (cs.CV) --- \href{https://arxiv.org/abs/2604.13236}{arXiv:2604.13236}.
     \item \projectstack{LLaVA-1.6, DINOv2, QLoRA/PEFT, LangGraph, SECS/GEM, Qdrant, FastAPI, ReportLab, Streamlit}
+    \item \textbf{Industry recognition:} Research featured by \textbf{Andre Zayarni, Co-founder of Qdrant}, on LinkedIn (2,120 impressions, 54 reactions, 7 reposts) --- publicly validating the system's industrial applicability for autonomous semiconductor FA.
 \end{itemize}
 
 \subsection{2. Wafer Defect Detection \& Classification (WM-811K)}
@@ -139,15 +134,44 @@ Multi-Agent Orchestration & Smart Factory / Industry 4.0 & \\
 \subsection{3. LLM-Powered SECS/GEM Protocol Assistant (RAG) \textnormal{\textit{(Applied at Kulicke \& Soffa)}}}
 \begin{itemize}[leftmargin=*, nosep, topsep=3pt]
     \item Built a RAG-powered LLM assistant for the SECS/GEM semiconductor protocol, enabling natural language queries over SEMI standards, equipment specifications, and alarm codes. Fine-tuned retrieval on SECS/GEM documentation with FAISS vector store.
+    \item RAG pipeline indexes SECS/GEM standards, equipment manuals, and alarm code definitions into FAISS; retrieves top-$k$ relevant chunks at query time to ground LLM responses in accurate, protocol-specific context.
     \item Deployed as an interactive web application for equipment and process engineers in semiconductor fabs.
-    \item \projectstack{HuggingFace Transformers, LangChain, FAISS, Streamlit}
+    \item \projectstack{HuggingFace Transformers, LangChain, RAG, FAISS, Streamlit}
 \end{itemize}
 
-\subsection{4. Wire Bond Quality Prediction \& Process Optimization \textnormal{\textit{(Applied at Kulicke \& Soffa)}}}
+\subsection{4. Customer Support Chatbot for K\&S Equipment Clients (RAG + ChromaDB) \textnormal{\textit{(Applied at Kulicke \& Soffa)}}}
+\begin{itemize}[leftmargin=*, nosep, topsep=3pt]
+    \item Built a RAG-based customer support chatbot for K\&S semiconductor equipment clients, enabling engineers to query machine manuals, troubleshooting guides, spare-parts catalogues, and service bulletins in natural language---reducing average ticket resolution time.
+    \item RAG pipeline ingests and chunks K\&S product documentation (RapidPro, ATPP, iFlex series) into \textbf{ChromaDB} vector store with sentence-transformer embeddings; retrieves top-$k$ semantically relevant passages to augment LLM context and prevent hallucination on equipment-specific queries.
+    \item Implemented conversation memory and session history to support multi-turn diagnostic dialogues; added confidence-score filtering to route low-certainty queries to human support agents.
+    \item \projectstack{LangChain, RAG, ChromaDB, Sentence-Transformers, HuggingFace Transformers, FastAPI, Streamlit}
+\end{itemize}
+
+\subsection{5. Wire Bond Quality Prediction \& Process Optimization \textnormal{\textit{(Applied at Kulicke \& Soffa)}}}
 \begin{itemize}[leftmargin=*, nosep, topsep=3pt]
     \item Developed ML-based wire bond quality prediction using process data (bond force, ultrasonic power, temperature, loop height) modeled on K\&S RapidPro and ATPP machine parameters. Classified bond pass/fail with root cause analysis and applied Bayesian optimization to identify optimal bonding parameters, reducing predicted defect rate by 40\%.
     \item \projectstack{scikit-learn, Optuna, matplotlib}
 \end{itemize}
+
+\subsection{6. E-Commerce RAG Customer Support Chatbot --- Production-Deployed on AWS}
+\begin{itemize}[leftmargin=*, nosep, topsep=3pt]
+    \item Built a production-ready e-commerce customer service chatbot using RAG, answering natural-language queries over company policy documents (returns, shipping, warranty) with source-attributed, citation-grounded responses and zero hallucination on out-of-scope questions.
+    \item Implemented a three-mode retrieval engine: \textbf{AWS Bedrock Knowledge Base} (vector similarity), \textbf{BM25} keyword search, and a \textbf{hybrid mode} that alpha-weights and normalises scores from both---configurable at runtime via the Streamlit UI sidebar.
+    \item Built conversation memory preserving 6-turn history and a regex-based user context extractor (name, order number, email) that personalises responses across the session; conversations exportable to JSON for audit trails.
+    \item Deployed end-to-end on \textbf{AWS}: Docker image stored in \textbf{ECR}; Streamlit app served via \textbf{ECS Fargate} (serverless containers); knowledge base documents in \textbf{S3}; secrets managed in \textbf{SSM Parameter Store}; logs streamed to \textbf{CloudWatch}; IAM roles scoped to least-privilege Bedrock and S3 access.
+    \item \projectstack{Python, LangChain, AWS Bedrock, ECS Fargate, ECR, S3, SSM Parameter Store, CloudWatch, BM25, boto3, Streamlit, Docker}
+\end{itemize}
+
+% ============================================================
+% PUBLICATIONS
+% ============================================================
+\section{Publications}
+
+\noindent\textbf{SemiFA: An Agentic Multi-Modal Framework for Autonomous Semiconductor Failure Analysis Report Generation}\\
+\textit{Shivam Chand Kaushik} \hfill 2026\\
+\textbf{Published on arXiv (cs.CV)} --- \href{https://arxiv.org/abs/2604.13236}{arXiv:2604.13236}\\
+Proposes a four-agent LangGraph pipeline fusing DINOv2 visual embeddings, SECS/GEM telemetry, and LLaVA-1.6 for automated semiconductor Failure Analysis report generation; includes the publicly released SemiFA-930 dataset (930 SEM/optical/wafer-map images, 9 defect classes) on HuggingFace.\\
+\textcolor{accent}{\textbf{Highlighted by Andre Zayarni (Co-founder, Qdrant)}} on LinkedIn --- \href{https://lnkd.in/gpwVj8P8}{post reached 2,120 impressions}, recognising the system's real-world impact in chip manufacturing fabs.
 
 % ============================================================
 % EDUCATION
@@ -155,7 +179,7 @@ Multi-Agent Orchestration & Smart Factory / Industry 4.0 & \\
 \section{Education}
 
 \noindent\textbf{Indian Institute of Technology (IIT), Jodhpur} \hfill June 2024 --- May 2026\\
-\textit{Master of Technology (M.Tech) --- Artificial Intelligence}
+\textit{Master of Technology (M.Tech) --- Artificial Intelligence} \hfill CGPA: 8.46/10
 
 \noindent\textbf{JSS Academy of Technical Education, Noida} \hfill June 2011 --- May 2015\\
 \textit{Bachelor of Technology (B.Tech) --- Information Technology}
@@ -165,23 +189,10 @@ Multi-Agent Orchestration & Smart Factory / Industry 4.0 & \\
 % ============================================================
 \section{Achievements}
 \begin{itemize}[leftmargin=*, nosep, topsep=2pt]
+    \item \textbf{Research featured by Qdrant Co-founder (2026)} --- SemiFA paper (\href{https://arxiv.org/abs/2604.13236}{arXiv:2604.13236}) \href{https://lnkd.in/gpwVj8P8}{highlighted} by \textbf{Andre Zayarni}, Co-founder of Qdrant, as a real-world application of vector search in chip manufacturing fabs.
     \item \textbf{Bright Mind Award} --- ASM Technologies Ltd.\ (2021), recognizing exceptional technical contribution in semiconductor software engineering
     \item \textbf{779th Rank} --- International Mathematics Olympiad (IMO), demonstrating strong analytical and quantitative aptitude
 \end{itemize}
-
-% ============================================================
-% CERTIFICATIONS
-% ============================================================
-\section{Certifications (In Progress)}
-
-\begin{tabularx}{\textwidth}{|X|l|}
-\hline
-\textbf{Certification} & \textbf{Provider} \\
-\hline
-Fundamentals of Deep Learning & NVIDIA Deep Learning Institute (DLI) \\
-AWS Certified Machine Learning Engineer --- Associate & Amazon Web Services \\
-\hline
-\end{tabularx}
 
 \vfill
 \begin{center}

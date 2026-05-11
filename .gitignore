@@ -1,0 +1,14 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Ignore everything in Analysis/ ...
+Analysis/*
+
+# ... except these two files
+!Analysis/resume_final.pdf
+!Analysis/resume_final.tex
