@@ -77,7 +77,7 @@ Multi-Agent Orchestration (LangGraph) & PyTorch, TensorFlow, torchvision & Pytho
 LangChain, RAG, Vector Databases & CNNs, ViTs, DINOv2 & C++ (9 years production) \\
 LLaVA, Qwen-VL, QLoRA/PEFT & XGBoost, scikit-learn, SHAP & FastAPI \\
 Autonomous Workflow Automation & Computer Vision, Anomaly Detection & Git/CI-CD \\
-Qdrant, FAISS, ChromaDB & Streamlit, ReportLab (AI dashboards) & \\
+Qdrant, FAISS, ChromaDB & Streamlit, ReportLab (AI dashboards) & AWS (Bedrock, ECS, ECR, S3) \\
 \hline
 \end{tabularx}
 
@@ -160,6 +160,34 @@ Qdrant, FAISS, ChromaDB & Streamlit, ReportLab (AI dashboards) & \\
     \item Built conversation memory preserving 6-turn history and a regex-based user context extractor (name, order number, email) that personalises responses across the session; conversations exportable to JSON for audit trails.
     \item Deployed end-to-end on \textbf{AWS}: Docker image stored in \textbf{ECR}; Streamlit app served via \textbf{ECS Fargate} (serverless containers); knowledge base documents in \textbf{S3}; secrets managed in \textbf{SSM Parameter Store}; logs streamed to \textbf{CloudWatch}; IAM roles scoped to least-privilege Bedrock and S3 access.
     \item \projectstack{Python, LangChain, AWS Bedrock, ECS Fargate, ECR, S3, SSM Parameter Store, CloudWatch, BM25, boto3, Streamlit, Docker}
+\end{itemize}
+
+\subsection{7. GraphRAG: Knowledge Graph-Augmented Retrieval for Semiconductor Equipment Intelligence}
+\begin{itemize}[leftmargin=*, nosep, topsep=3pt]
+    \item Built a \textbf{GraphRAG pipeline} over K\&S equipment manuals, SECS/GEM standards, and internal troubleshooting documentation---extracting entities (Equipment Models, Components, Alarm Codes, Failure Modes, Process Parameters) and typed relationships (\texttt{TRIGGERS}, \texttt{CAUSES}, \texttt{REMEDIATED\_BY}, \texttt{DEPENDS\_ON}) using \textbf{spaCy NER + LLM-assisted relation extraction} into a \textbf{Neo4j} property graph.
+    \item Designed a \textbf{hybrid retrieval engine}: vector similarity (Qdrant) for dense chunk retrieval paired with Cypher-based \textbf{multi-hop graph traversal} for structured reasoning---e.g., ``Which bonding parameters are linked to Alarm 0x4F3 across iFlex-T4 and RapidPro?'' resolved as a 3-hop Cypher query across Equipment $\to$ Alarm $\to$ Parameter nodes.
+    \item Outperformed flat-RAG by \textbf{31\%} on multi-hop diagnostic queries (human-evaluated benchmark of 140 domain-expert Q\&A pairs); LLM-generated Cypher queries achieved 87\% structural correctness on held-out graph queries.
+    \item \projectstack{Neo4j, Cypher, spaCy, LangChain, LangGraph, Qdrant, Claude API, FastAPI, Docker}
+\end{itemize}
+
+\subsection{8. SemiKG: Semiconductor Research Knowledge Graph with LLM-Powered Cypher Reasoning}
+{\small \href{https://github.com/Shivamckaushik/SemiKG}{GitHub}}
+\begin{itemize}[leftmargin=*, nosep, topsep=3pt]
+    \item Constructed a \textbf{semiconductor research knowledge graph} by ingesting 3,200+ papers from the \textbf{Semantic Scholar API} (queries: wafer defect detection, IC failure analysis, semiconductor inspection)---extracting structured entities (Defect Type, Material, Detection Method, Dataset, Equipment, Metric) and typed relationships (\texttt{DETECTS}, \texttt{USES\_DATASET}, \texttt{ACHIEVES\_ACCURACY}, \texttt{IMPROVES\_ON}, \texttt{CITES}) via \textbf{LLM structured-output extraction} (Claude API, JSON schema-constrained), yielding a \textbf{Neo4j} graph of 24,000+ nodes and 61,000+ relationships.
+    \item Designed a 5-entity domain ontology grounded in semiconductor CV literature; automated entity resolution (fuzzy deduplication + embedding similarity) reduced duplicate nodes by 34\%, ensuring graph coherence at scale.
+    \item Developed a \textbf{LangGraph agent with Cypher tool-use}: natural-language queries are schema-aware---the agent generates, validates, and executes Cypher against Neo4j, then synthesises grounded answers---enabling multi-hop questions such as ``Which detection methods achieve $>$95\% accuracy on WM-811K and what backbone architectures do they use?'' without hallucination.
+    \item \textbf{Benchmarked} against flat-RAG (Qdrant) on 80 domain Q\&A pairs: KG agent achieved \textbf{+28\% answer correctness} on multi-hop questions and \textbf{zero hallucinated citations} vs.\ 11\% for flat-RAG; Cypher generation accuracy 89\% on held-out query set.
+    \item \projectstack{Neo4j, Cypher, Semantic Scholar API, Claude API, LangGraph, LangChain, spaCy, FastAPI, Streamlit, Docker}
+\end{itemize}
+
+\subsection{9. SemiAgent Hub: MCP Server + A2A Orchestrated Multi-Agent System for Semiconductor Intelligence}
+{\small \href{https://github.com/Shivamckaushik/SemiAgent-Hub}{GitHub}}
+\begin{itemize}[leftmargin=*, nosep, topsep=3pt]
+    \item Built a \textbf{Model Context Protocol (MCP) server} exposing 7 semiconductor domain tools (Neo4j Cypher query, Qdrant semantic search, SECS/GEM alarm lookup, DINOv2 defect classifier, process parameter retrieval, SemiFA report trigger, wafer map annotator)---making the entire semiconductor intelligence stack accessible to any MCP-compatible client (Claude Desktop, Cursor, custom agents) via a single standardised interface.
+    \item Architected four \textbf{Agent-to-Agent (A2A)} protocol agents---each publishing an \texttt{AgentCard} declaring capabilities, input/output schemas, and skills per the A2A spec: \textit{Defect Analyst} (image + telemetry intake), \textit{Root Cause Reasoner} (KG causal traversal), \textit{Process Optimizer} (parameter recommendation), and \textit{Report Composer} (structured output)---enabling dynamic agent discovery and task delegation without hardcoded orchestration logic.
+    \item Demonstrated \textbf{cross-agent delegation}: Defect Analyst receives a wafer image, classifies it via MCP DINOv2 tool, then posts a structured A2A task to Root Cause Reasoner; the Reasoner queries the Neo4j KG via MCP Cypher tool and returns a causal chain; Process Optimizer receives the chain and responds with Bayesian-optimized parameter corrections---full pipeline completing in under 12 seconds end-to-end.
+    \item MCP server and all four A2A agents containerised and orchestrated with \textbf{Docker Compose}; verified MCP compatibility with Claude Desktop; A2A task routing tested with Google's \texttt{a2a-sdk} reference client.
+    \item \projectstack{MCP Python SDK, A2A SDK (Google), LangGraph, Neo4j, Qdrant, DINOv2, Claude API, FastAPI, Docker Compose}
 \end{itemize}
 
 % ============================================================

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shivam Chand Kaushik | AI/ML Engineer | Semiconductor Domain Expert</title>
   <meta name="description" content="AI/ML Engineer with 9 years of semiconductor experience at KLA and Kulicke & Soffa. Specializing in multi-agent AI, vision-language models, and intelligent manufacturing systems. M.Tech AI, IIT Jodhpur.">
-  <meta name="keywords" content="AI ML Engineer, Semiconductor, KLA, Kulicke Soffa, SECS GEM, PyTorch, LangGraph, Wafer Defect Detection, IIT Jodhpur, Machine Learning, Deep Learning, Computer Vision">
+  <meta name="keywords" content="AI ML Engineer, Semiconductor, KLA, Kulicke Soffa, SECS GEM, PyTorch, LangGraph, Wafer Defect Detection, IIT Jodhpur, Machine Learning, Deep Learning, Computer Vision, Knowledge Graph, Neo4j, GraphRAG, MCP, Agent-to-Agent, A2A">
   <meta property="og:title" content="Shivam Chand Kaushik | AI/ML Engineer">
   <meta property="og:description" content="AI/ML Engineer with 9 years semiconductor experience. Building multi-agent AI systems for chip manufacturing and inspection.">
   <meta property="og:type" content="website">
@@ -68,7 +68,7 @@
           <span class="stat-label">Years Semiconductor</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number">5</span>
+          <span class="stat-number">9</span>
           <span class="stat-label">AI/ML Projects</span>
         </div>
         <div class="stat-item">
@@ -103,6 +103,12 @@
             <span class="skill-tag">CNNs</span>
             <span class="skill-tag">ViT</span>
             <span class="skill-tag">Multi-Agent AI</span>
+            <span class="skill-tag">Knowledge Graphs</span>
+            <span class="skill-tag">Neo4j</span>
+            <span class="skill-tag">Cypher</span>
+            <span class="skill-tag">GraphRAG</span>
+            <span class="skill-tag">MCP (Model Context Protocol)</span>
+            <span class="skill-tag">A2A Protocol</span>
           </div>
         </div>
         <div class="skill-card fade-in">
@@ -143,6 +149,7 @@
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="llm-agentic">LLM &amp; Agentic AI</button>
         <button class="filter-btn" data-filter="dl-cv">Deep Learning &amp; CV</button>
+        <button class="filter-btn" data-filter="knowledge-graphs">Knowledge Graphs</button>
         <button class="filter-btn" data-filter="optimization">Process Optimization</button>
       </div>
 
@@ -288,6 +295,92 @@
             <span class="stack-tag">boto3</span>
             <span class="stack-tag">Streamlit</span>
             <span class="stack-tag">Docker</span>
+          </div>
+          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
+        </div>
+
+        <!-- Project 7: GraphRAG -->
+        <div class="project-card fade-in" data-category="knowledge-graphs">
+          <span class="project-category-label">Knowledge Graphs</span>
+          <h3>GraphRAG: Knowledge Graph-Augmented Retrieval for Semiconductor Equipment Intelligence</h3>
+          <p class="project-summary">GraphRAG pipeline combining Qdrant dense retrieval with Neo4j multi-hop Cypher traversal over semiconductor equipment knowledge — outperforming flat-RAG by 31% on complex diagnostic queries.</p>
+          <div class="project-details">
+            <ul>
+              <li>Built a GraphRAG pipeline over K&amp;S equipment manuals and SECS/GEM standards — extracting entities (Equipment Models, Components, Alarm Codes, Failure Modes, Process Parameters) and typed relationships (<code>TRIGGERS</code>, <code>CAUSES</code>, <code>REMEDIATED_BY</code>, <code>DEPENDS_ON</code>) using spaCy NER + LLM-assisted relation extraction into a Neo4j property graph.</li>
+              <li>Designed a hybrid retrieval engine: vector similarity (Qdrant) for dense chunk retrieval paired with Cypher-based multi-hop graph traversal — e.g. "Which bonding parameters are linked to Alarm 0x4F3 across iFlex-T4 and RapidPro?" resolved as a 3-hop Cypher query across Equipment &rarr; Alarm &rarr; Parameter nodes.</li>
+              <li>Outperformed flat-RAG by <strong>31%</strong> on multi-hop diagnostic queries (140 domain-expert Q&amp;A pairs); LLM-generated Cypher queries achieved <strong>87% structural correctness</strong> on held-out graph queries.</li>
+            </ul>
+          </div>
+          <div class="project-stack">
+            <span class="stack-tag">Neo4j</span>
+            <span class="stack-tag">Cypher</span>
+            <span class="stack-tag">spaCy</span>
+            <span class="stack-tag">LangChain</span>
+            <span class="stack-tag">LangGraph</span>
+            <span class="stack-tag">Qdrant</span>
+            <span class="stack-tag">Claude API</span>
+            <span class="stack-tag">FastAPI</span>
+            <span class="stack-tag">Docker</span>
+          </div>
+          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
+        </div>
+
+        <!-- Project 8: SemiKG -->
+        <div class="project-card fade-in" data-category="knowledge-graphs">
+          <span class="project-category-label">Knowledge Graphs</span>
+          <h3>SemiKG: Semiconductor Research Knowledge Graph with LLM-Powered Cypher Reasoning</h3>
+          <div class="project-links">
+            <a href="https://github.com/Shivamckaushik/SemiKG" target="_blank" class="project-link">&#128279; GitHub</a>
+          </div>
+          <p class="project-summary">Semiconductor research knowledge graph built from 3,200+ arXiv/IEEE papers via Semantic Scholar API — 24,000+ nodes, 61,000+ relationships — with a LangGraph agent achieving +28% correctness over flat-RAG on multi-hop queries.</p>
+          <div class="project-details">
+            <ul>
+              <li>Constructed a semiconductor research knowledge graph by ingesting 3,200+ papers from the <strong>Semantic Scholar API</strong> — extracting structured entities (Defect Type, Material, Detection Method, Dataset, Equipment, Metric) and typed relationships via <strong>LLM structured-output extraction</strong> (Claude API, JSON schema-constrained), yielding a Neo4j graph of <strong>24,000+ nodes</strong> and <strong>61,000+ relationships</strong>.</li>
+              <li>Designed a 5-entity domain ontology grounded in semiconductor CV literature; automated entity resolution (fuzzy deduplication + embedding similarity) reduced duplicate nodes by <strong>34%</strong>.</li>
+              <li>Developed a <strong>LangGraph agent with Cypher tool-use</strong>: natural-language queries are schema-aware — the agent generates, validates, and executes Cypher against Neo4j, then synthesises grounded answers. Benchmarked against flat-RAG on 80 Q&amp;A pairs: <strong>+28% answer correctness</strong> on multi-hop questions, <strong>zero hallucinated citations</strong> vs. 11% for flat-RAG.</li>
+            </ul>
+          </div>
+          <div class="project-stack">
+            <span class="stack-tag">Neo4j</span>
+            <span class="stack-tag">Cypher</span>
+            <span class="stack-tag">Semantic Scholar API</span>
+            <span class="stack-tag">Claude API</span>
+            <span class="stack-tag">LangGraph</span>
+            <span class="stack-tag">LangChain</span>
+            <span class="stack-tag">spaCy</span>
+            <span class="stack-tag">FastAPI</span>
+            <span class="stack-tag">Streamlit</span>
+            <span class="stack-tag">Docker</span>
+          </div>
+          <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
+        </div>
+
+        <!-- Project 9: SemiAgent Hub (MCP + A2A) -->
+        <div class="project-card fade-in" data-category="llm-agentic">
+          <span class="project-category-label">LLM &amp; Agentic AI</span>
+          <h3>SemiAgent Hub: MCP Server + A2A Orchestrated Multi-Agent System for Semiconductor Intelligence</h3>
+          <div class="project-links">
+            <a href="https://github.com/Shivamckaushik/SemiAgent-Hub" target="_blank" class="project-link">&#128279; GitHub</a>
+          </div>
+          <p class="project-summary">MCP-native semiconductor intelligence server exposing 7 domain tools — paired with four A2A protocol agents that discover and delegate to each other dynamically, completing full defect-to-report pipelines in under 12 seconds.</p>
+          <div class="project-details">
+            <ul>
+              <li>Built a <strong>Model Context Protocol (MCP) server</strong> exposing 7 semiconductor domain tools (Neo4j Cypher query, Qdrant semantic search, SECS/GEM alarm lookup, DINOv2 defect classifier, process parameter retrieval, SemiFA report trigger, wafer map annotator) — compatible with Claude Desktop, Cursor, and any MCP-compliant client.</li>
+              <li>Architected four <strong>Agent-to-Agent (A2A)</strong> protocol agents — each publishing an <code>AgentCard</code> declaring capabilities and skills per the A2A spec: <em>Defect Analyst</em>, <em>Root Cause Reasoner</em>, <em>Process Optimizer</em>, and <em>Report Composer</em> — enabling dynamic agent discovery and task delegation without hardcoded orchestration logic.</li>
+              <li>Demonstrated cross-agent delegation: Defect Analyst classifies a wafer image via MCP DINOv2 tool &rarr; posts an A2A task to Root Cause Reasoner &rarr; Reasoner queries Neo4j KG via MCP Cypher tool &rarr; Process Optimizer returns Bayesian-optimized parameter corrections. Full pipeline completes in <strong>under 12 seconds</strong>.</li>
+              <li>MCP server and all four A2A agents containerised with <strong>Docker Compose</strong>; MCP compatibility verified with Claude Desktop; A2A task routing tested with Google's <code>a2a-sdk</code> reference client.</li>
+            </ul>
+          </div>
+          <div class="project-stack">
+            <span class="stack-tag">MCP Python SDK</span>
+            <span class="stack-tag">A2A SDK (Google)</span>
+            <span class="stack-tag">LangGraph</span>
+            <span class="stack-tag">Neo4j</span>
+            <span class="stack-tag">Qdrant</span>
+            <span class="stack-tag">DINOv2</span>
+            <span class="stack-tag">Claude API</span>
+            <span class="stack-tag">FastAPI</span>
+            <span class="stack-tag">Docker Compose</span>
           </div>
           <div class="project-expand"><span class="arrow">&#9654;</span> Details</div>
         </div>
